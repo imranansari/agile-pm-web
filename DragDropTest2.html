@@ -14,8 +14,8 @@
             font-family: arial, sans-serif;
             font-size: 100%;
             margin: 3em;
-            background: #666;
-            color: #fff;
+            background: white;
+            color: black;
         }
 
         h2, p {
@@ -32,10 +32,10 @@
             padding: 2em;
         }
 
-        ul li a {
+        ul li:nth-child(even) a {
             text-decoration: none;
             color: #000;
-            background: #ffc;
+            background: #fff182;
             display: block;
             height: 6em;
             width: 8em;
@@ -46,6 +46,39 @@
             -moz-transition: -moz-transform .15s linear;
             -o-transition: -o-transform .15s linear;
             -webkit-transition: -webkit-transform .15s linear;
+            -webkit-transform: rotate(.5deg);
+        }
+
+        ul li:nth-child(odd) a {
+            text-decoration: none;
+            color: #000;
+            background: #fff182;
+            display: block;
+            height: 6em;
+            width: 8em;
+            padding: 1em;
+            -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+            -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+            box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+            -moz-transition: -moz-transform .15s linear;
+            -o-transition: -o-transform .15s linear;
+            -webkit-transition: -webkit-transform .15s linear;
+            -webkit-transform: rotate(-.5deg);
+        }
+
+        ul li a:after {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 16px;
+            top: -11px;
+            left: 25%;
+            border: 1px solid #fff;
+            background: rgba(254, 254, 254, .6);
+            -webkit-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
         }
 
         ul li {
@@ -54,14 +87,14 @@
         }
 
         ul li h2 {
-            font-size: 140%;
+            font-size: 110%;
             font-weight: bold;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
         }
 
         ul li p {
             font-family: "Reenie Beanie", arial, sans-serif;
-            font-size: 180%;
+            font-size: 130%;
         }
 
         ul li a {
@@ -130,35 +163,27 @@
         });
     </script>
 </head>
-<body>
-<ol>
-    <li id="draggable"><a href="step1.html">Step #1</a></li>
-    <li><a href="step2.html">Step #2</a></li>
-    <li><a href="step3.html">Step #3</a></li>
-    <li><a href="step4.html">Step #4</a></li>
-    <li><strong>Step #5</strong></li>
-    <li><a href="#"></a></li>
-</ol>
 
 <div id="design" class="phasepanel">
+    <span>Phase1</span>
     <ul class="movable">
         <li>
             <a href="#">
-                <h2>Title #1</h2>
+                <h2>Story #1</h2>
 
                 <p>Text Content #1</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Title #2</h2>
+                <h2>Story #2</h2>
 
                 <p>Text Content #2</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Title #3</h2>
+                <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
             </a>
@@ -167,24 +192,25 @@
 </div>
 
 <div id="code" class="phasepanel">
+    <span>Phase2</span>
     <ul class="movable">
         <li>
             <a href="#">
-                <h2>Code #1</h2>
+                <h2>Story #1</h2>
 
                 <p>Text Content #1</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #2</h2>
+                <h2>Story #2</h2>
 
                 <p>Text Content #2</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #3</h2>
+                <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
             </a>
@@ -193,52 +219,53 @@
 </div>
 
 <div id="intg" class="phasepanel">
+    <span>Phase3</span>
     <ul class="movable">
         <li>
             <a href="#">
-                <h2>Code #1</h2>
+                <h2>Story #1</h2>
 
                 <p>Text Content #1</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #2</h2>
+                <h2>Story #2</h2>
 
                 <p>Text Content #2</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #3</h2>
+                <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #3</h2>
+                <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #3</h2>
+                <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #3</h2>
+                <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #3</h2>
+                <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
             </a>
@@ -247,24 +274,25 @@
 </div>
 
 <div id="qa" class="phasepanel">
+    <span>Phase4</span>
     <ul class="movable">
         <li>
             <a href="#">
-                <h2>Code #1</h2>
+                <h2>Story #1</h2>
 
                 <p>Text Content #1</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #2</h2>
+                <h2>Story #2</h2>
 
                 <p>Text Content #2</p>
             </a>
         </li>
         <li>
             <a href="#">
-                <h2>Code #3</h2>
+                <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
             </a>
