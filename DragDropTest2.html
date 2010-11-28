@@ -14,7 +14,7 @@
             font-family: arial, sans-serif;
             font-size: 100%;
             margin: 3em;
-            background: white;
+            background: #e8e8e8;
             color: black;
         }
 
@@ -40,13 +40,16 @@
             height: 6em;
             width: 8em;
             padding: 1em;
-            -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
-            -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-            box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+        / / -moz-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, 1 );
+        / / -webkit-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
+        / / box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
+            -moz-box-shadow: 0px 10px 5px #ccc;
+            -webkit-box-shadow: 0px 10px 5px #ccc;
+            box-shadow: 0px 10px 5px #ccc;
             -moz-transition: -moz-transform .15s linear;
             -o-transition: -o-transform .15s linear;
             -webkit-transition: -webkit-transform .15s linear;
-            -webkit-transform: rotate(.5deg);
+            -webkit-transform: rotate(1deg);
         }
 
         ul li:nth-child(odd) a {
@@ -57,13 +60,30 @@
             height: 6em;
             width: 8em;
             padding: 1em;
-            -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
-            -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-            box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+        / / -moz-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, 1 );
+        / / -webkit-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
+        / / box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
+            -moz-box-shadow: 0px 10px 5px #ccc;
+            -webkit-box-shadow: 0px 10px 5px #ccc;
+            box-shadow: 0px 10px 5px #ccc;
             -moz-transition: -moz-transform .15s linear;
             -o-transition: -o-transform .15s linear;
             -webkit-transition: -webkit-transform .15s linear;
-            -webkit-transform: rotate(-.5deg);
+            -webkit-transform: rotate(-1deg);
+        }
+
+        .ul li a span {
+            width: 100%;
+            height: 15px;
+            position: absolute;
+            bottom: -30px; /* ~equal to the height + shadow y offset + shadow blur radius */
+            right: 0px;
+            box-shadow: 0px -10px 5px #fff;
+            -moz-box-shadow: 0px -10px 5px #fff;
+            -webkit-box-shadow: 0px -10px 5px #fff;
+            border-radius: 50% / 7px;
+            -moz-border-radius: 50% / 7px;
+            -webkit-border-radius: 400px 20px; /* webkit browsers apparently can't use a % for ellipse border radius */
         }
 
         ul li a:after {
@@ -71,8 +91,8 @@
             content: "";
             position: absolute;
             width: 80px;
-            height: 16px;
-            top: -11px;
+            height: 12px;
+            top: -8px;
             left: 25%;
             border: 1px solid #fff;
             background: rgba(254, 254, 254, .6);
@@ -82,7 +102,7 @@
         }
 
         ul li {
-            margin: 1em;
+            margin: 1.5em;
         / / float : left;
         }
 
@@ -168,10 +188,11 @@
     <span>Phase1</span>
     <ul class="movable">
         <li>
-            <a href="#">
+            <a href="#" class="shadow_box">
                 <h2>Story #1</h2>
 
                 <p>Text Content #1</p>
+                <span></span>
             </a>
         </li>
         <li>
