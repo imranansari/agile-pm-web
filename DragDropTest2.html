@@ -13,7 +13,7 @@
         body {
             font-family: arial, sans-serif;
             font-size: 100%;
-            margin: 3em;
+            margin: 1em;
             background: #e8e8e8;
             color: black;
         }
@@ -29,22 +29,23 @@
 
         ul {
             overflow: hidden;
-            padding: 2em;
+        / / padding : .5 em;
         }
 
         ul li:nth-child(even) a {
             text-decoration: none;
             color: #000;
-            background: #fff182;
             display: block;
-            height: 6em;
-            width: 8em;
+            height: 145px;
+            width: 200px;
             padding: 1em;
         / / -moz-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, 1 );
         / / -webkit-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
         / / box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
             -moz-box-shadow: 0px 10px 5px #ccc;
             -webkit-box-shadow: 0px 10px 5px #ccc;
+            /*background: #fff182*/
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
             box-shadow: 0px 10px 5px #ccc;
             -moz-transition: -moz-transform .15s linear;
             -o-transition: -o-transform .15s linear;
@@ -55,10 +56,11 @@
         ul li:nth-child(odd) a {
             text-decoration: none;
             color: #000;
-            background: #fff182;
+            /*background: #fff182*/
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
             display: block;
-            height: 6em;
-            width: 8em;
+            height: 145px;
+            width: 200px;
             padding: 1em;
         / / -moz-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, 1 );
         / / -webkit-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
@@ -72,7 +74,7 @@
             -webkit-transform: rotate(-1deg);
         }
 
-        .ul li a span {
+        ul li a span {
             width: 100%;
             height: 15px;
             position: absolute;
@@ -80,19 +82,22 @@
             right: 0px;
             box-shadow: 0px -10px 5px #fff;
             -moz-box-shadow: 0px -10px 5px #fff;
-            -webkit-box-shadow: 0px -10px 5px #fff;
+            -webkit-box-shadow: 0px -10px 5px #e8e8e8;
             border-radius: 50% / 7px;
             -moz-border-radius: 50% / 7px;
             -webkit-border-radius: 400px 20px; /* webkit browsers apparently can't use a % for ellipse border radius */
         }
 
+            /**
+               Tape class
+            **/
         ul li a:after {
             display: block;
             content: "";
             position: absolute;
             width: 80px;
-            height: 12px;
-            top: -8px;
+            height: 10px;
+            top: -6px;
             left: 25%;
             border: 1px solid #fff;
             background: rgba(254, 254, 254, .6);
@@ -149,6 +154,7 @@
         .phasepanel {
             float: left;
             border: 2px #dcdcdc solid;
+        / / width : 125 px;
         }
     </style>
 
@@ -189,9 +195,15 @@
     <ul class="movable">
         <li>
             <a href="#" class="shadow_box">
-                <h2>Story #1</h2>
-
-                <p>Text Content #1</p>
+                <table width='100%'>
+                    <tr>
+                        <td><h2>Story #1</h2></td>
+                        <td><input type="button" value="Edit"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p>Text Content #1</p></td>
+                    </tr>
+                </table>
                 <span></span>
             </a>
         </li>
@@ -200,6 +212,7 @@
                 <h2>Story #2</h2>
 
                 <p>Text Content #2</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -207,6 +220,7 @@
                 <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
+                <span></span>
             </a>
         </li>
     </ul>
@@ -220,6 +234,7 @@
                 <h2>Story #1</h2>
 
                 <p>Text Content #1</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -227,6 +242,7 @@
                 <h2>Story #2</h2>
 
                 <p>Text Content #2</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -234,6 +250,7 @@
                 <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
+                <span></span>
             </a>
         </li>
     </ul>
@@ -247,6 +264,7 @@
                 <h2>Story #1</h2>
 
                 <p>Text Content #1</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -254,6 +272,7 @@
                 <h2>Story #2</h2>
 
                 <p>Text Content #2</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -261,6 +280,7 @@
                 <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -268,6 +288,7 @@
                 <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -275,6 +296,7 @@
                 <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -282,6 +304,7 @@
                 <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -289,6 +312,7 @@
                 <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
+                <span></span>
             </a>
         </li>
     </ul>
@@ -302,6 +326,7 @@
                 <h2>Story #1</h2>
 
                 <p>Text Content #1</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -309,6 +334,7 @@
                 <h2>Story #2</h2>
 
                 <p>Text Content #2</p>
+                <span></span>
             </a>
         </li>
         <li>
@@ -316,6 +342,7 @@
                 <h2>Story #3</h2>
 
                 <p>Text Content #3</p>
+                <span></span>
             </a>
         </li>
     </ul>
