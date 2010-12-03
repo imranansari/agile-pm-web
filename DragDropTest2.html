@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<title>Sticky notes using CSS3 and Google Fonts (Step 5)</title>
-<link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+    <meta charset="utf-8"/>
+    <title>Sticky notes using CSS3 and Google Fonts (Step 5)</title>
+    <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
 
     <link href="board.css" rel="stylesheet" type="text/css">
+    <link href="overlay-apple.css" rel="stylesheet" type="text/css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
-<script src="http://cdn.jquerytools.org/1.2.5/tiny/jquery.tools.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
+    <script src="jquery.tools.min.js"></script>
 
-<script>
-    $(function() {
-        /*$(".sortable").sortable({
-         revert: true,
-         helper: "clone"
-         });
-         $("#draggable").draggable({
-         connectToSortable: ".sortable",
-         helper: "clone",
-         revert: "true"
-         });*/
-
+    <script>
         $(function() {
-            /* $("#sortable1, #sortable2").sortable({
-             connectWith: ".connectedSortable"
-             }).disableSelection();*/
+            /*$(".sortable").sortable({
+             revert: true,
+             helper: "clone"
+             });
+             $("#draggable").draggable({
+             connectToSortable: ".sortable",
+             helper: "clone",
+             revert: "true"
+             });*/
 
-            $(".movable").sortable({
-                connectWith: ".movable"
+            $(function() {
+                /* $("#sortable1, #sortable2").sortable({
+                 connectWith: ".connectedSortable"
+                 }).disableSelection();*/
+
+                $(".movable").sortable({
+                    connectWith: ".movable"
+                });
+                $(".movable").disableSelection();
+
             });
-            $(".movable").disableSelection();
+
+            $("#edit1").click(function() {
+
+                $("#noteOverLay").overlay({
+                    closeOnClick: false,
+                    speed: 'fast',
+                    effect: 'apple',
+                    load: true
+                });
+                $("#noteOverLay").data('overlay').load();
+            });
 
         });
 
-        $("#edit1").click(function() {
 
-            $("#noteOverLay").overlay({
-                closeOnClick: false,
-                speed: 'fast',
-                load: true
-            });
-            $("#noteOverLay").data('overlay').load();
-        });
-
-    });
-
-
-</script>
+    </script>
 </head>
 
+<div id="header"></div>
+<div id="mainContainer">
 <div id="design" class="phasepanel">
-    <span>Phase1</span>
+    <span class="phaseHeader">Phase1</span>
     <ul class="movable">
         <li>
             <a href="#" class="shadow_box" id="card1">
@@ -70,9 +74,9 @@
         </li>
         <li>
             <a href="#">
-                <h2>Story #2</h2>
+                <h2>Kanban dashboard</h2>
 
-                <p>Text Content #2</p>
+                <p>As a ProjectAdmin I should be able to move any cards on my project</p>
                 <span></span>
             </a>
         </li>
@@ -88,7 +92,7 @@
 </div>
 
 <div id="code" class="phasepanel">
-    <span>Phase2</span>
+    <span class="phaseHeader">Phase2</span>
     <ul class="movable">
         <li>
             <a href="#">
@@ -118,7 +122,7 @@
 </div>
 
 <div id="intg" class="phasepanel">
-    <span>Phase3</span>
+    <span class="phaseHeader">Phase3</span>
     <ul class="movable">
         <li>
             <a href="#">
@@ -180,7 +184,7 @@
 </div>
 
 <div id="qa" class="phasepanel">
-    <span>Phase4</span>
+    <span class="phaseHeader">Phase4</span>
     <ul class="movable">
         <li>
             <a href="#">
@@ -208,9 +212,10 @@
         </li>
     </ul>
 </div>
+    </div>
 
 <!-- first overlay. id attribute matches our selector -->
-<div class="simple_overlay" id="noteOverLay">
+<div class="apple_overlay" id="noteOverLay">
     <!-- image details -->
     <div id="n1">
         <input type="text">
