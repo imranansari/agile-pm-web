@@ -7,7 +7,7 @@ body {
     font-family: arial, sans-serif;
     font-size: 100%;
     margin: 1em;
-    background: #e8e8e8;
+    background: white;
     color: black;
 }
 
@@ -42,16 +42,22 @@ ul li:nth-child(even) a {
     -moz-transition: -moz-transform .15s linear;
     -o-transition: -o-transform .15s linear;
     -webkit-transition: -webkit-transform .15s linear;
-    -webkit-transform: rotate(1deg);
+    -webkit-transform: rotate(0.7deg);
 }
 
 #n1 {
     text-decoration: none;
     color: #000;
     display: block;
-    height: 200px;
+    height: 482px;
     padding: 1em;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
+}
+
+#mainContainer {
+    height:2000px;
+    width:100%;
+    background-color: #f9f9f2;
 }
 
 ul li:nth-child(odd) a {
@@ -71,7 +77,7 @@ ul li:nth-child(odd) a {
     -moz-transition: -moz-transform .15s linear;
     -o-transition: -o-transform .15s linear;
     -webkit-transition: -webkit-transform .15s linear;
-    -webkit-transform: rotate(-1deg);
+    -webkit-transform: rotate(-0.7deg);
 }
 
 ul li a span {
@@ -112,14 +118,14 @@ ul li {
 }
 
 ul li h2 {
-    font-size: 110%;
+    font-size: 100%;
     font-weight: bold;
     padding-bottom: 5px;
 }
 
 ul li p {
     font-family: "Reenie Beanie", arial, sans-serif;
-    font-size: 130%;
+    font-size: 150%;
 }
 
 ul li a {
@@ -131,7 +137,7 @@ ul li a:hover, ul li a:focus {
     box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-    -webkit-transform: scale(1.05);
+    /*-webkit-transform: scale(1.05);*/
     -moz-transform: scale(1.05);
     -o-transform: scale(1.05);
     position: relative;
@@ -153,7 +159,7 @@ ol li a {
 
 .phasepanel {
     float: left;
-    border: 2px #dcdcdc solid;
+    border: 1px #dcdcdc solid;
 / / width : 125 px;
 }
 
@@ -200,3 +206,21 @@ ol li a {
     font-size: 15px;
     margin: 0 0 -10px 0;
 }
+
+#header {
+    background-image:url("img/header.png");
+    height:78px;
+    background-size: 99.99%;
+    background-repeat:no-repeat;
+}
+
+.phaseHeader {
+    text-align:center;
+    color:white;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#6d4d2f;
+    width:100%;
+    display:block;
+}
+
