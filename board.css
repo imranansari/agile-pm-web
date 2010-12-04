@@ -26,7 +26,7 @@ ul {
 / / padding : .5 em;
 }
 
-ul li:nth-child(even) a {
+ul li:nth-child(even) div {
     text-decoration: none;
     color: #000;
     display: block;
@@ -61,7 +61,7 @@ ul li:nth-child(even) a {
     background-color: #f9f9f2;
 }
 
-ul li:nth-child(odd) a {
+ul li:nth-child(odd) div {
     text-decoration: none;
     color: #000; /*background: #fff182*/
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
@@ -81,7 +81,7 @@ ul li:nth-child(odd) a {
     -webkit-transform: rotate(-0.7deg);
 }
 
-ul li a span {
+ul li div span {
 
     width: 100%;
     height: 15px;
@@ -100,7 +100,7 @@ ul li a span {
 /**
    Tape class
 **/
-ul li a:after {
+ul li div:after {
     display: block;
     content: "";
     position: absolute;
@@ -131,12 +131,12 @@ ul li p {
     font-size: 150%;
 }
 
-ul li a {
+ul li div {
     position: relative;
     top: 5px;
 }
 
-ul li a:hover, ul li a:focus {
+ul li div:hover, ul li div:focus {
     box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7); /*-webkit-transform: scale(1.05);*/
@@ -155,7 +155,7 @@ ol li {
     padding-right: 1em;
 }
 
-ol li a {
+ol li div {
     color: #fff;
 }
 
