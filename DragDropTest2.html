@@ -50,25 +50,16 @@
             });
 
             $(".expandableMenu").click(function(e) {
-
-
-                //$(".expandedMenu").toggleClass('displayClass');
                 $(this).closest("div").children('.expandedMenu').toggleClass('displayClass');
-                //$('.expandedMenu:not(this)').css("display", "none");
-                //--$('.expandedMenu').not($(this).closest("div").children('.expandedMenu')).toggleClass('displayClass')
-                               //$('.expandedMenu').css("display", "inline");
-                //alert($("#expandableMenu").attr("id"))
             });
 
-                        $(".expandableSubMenu").click(function(e) {
-
-
+            $(".expandableSubMenu").click(function(e) {
                 //$(".expandedMenu").toggleClass('displayClass');
-                 var expandingSubMenu   =    $(this).closest("div").children('.expandedSubMenu')
+                var expandingSubMenu = $(this).closest("div").children('.expandedSubMenu');
                 expandingSubMenu.toggleClass('displayClass');
                 //$('.expandedMenu:not(this)').css("display", "none");
-                //$('.expandedSubMenu').not(expandingSubMenu).css("display", "none");
-                               //$('.expandedMenu').css("display", "inline");
+       //$('.expandedSubMenu').not(expandingSubMenu).toggleClass('displayClass');
+                //$('.expandedMenu').css("display", "inline");
                 //alert($("#expandableMenu").attr("id"))
             });
 
@@ -102,7 +93,7 @@
                     <img src="images/icons/custom/Contacts-alt1.png" class="expandableSubMenu">
 
                     <div id="themeDetailMenu" class="expandedSubMenu displayClass">
-                        <img src="images/icons/custom/plus_16.png" title="Add New Theme"  style="vertical-align:top;">
+                        <img src="images/icons/custom/plus_16.png" title="Add New Theme" style="vertical-align:top;">
                     </div>
                 </div>
 
