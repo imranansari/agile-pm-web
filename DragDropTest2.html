@@ -2,11 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Sticky notes using CSS3 and Google Fonts (Step 5)</title>
+    <title>Live Iterations</title>
     <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin' rel='stylesheet' type='text/css'>
 
     <link href="board.css" rel="stylesheet" type="text/css">
     <link href="overlay-apple.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="sexybuttons.css" type="text/css"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
@@ -47,172 +49,242 @@
                 $("#noteOverLay").data('overlay').load();
             });
 
+            $(".expandableMenu").click(function(e) {
+
+
+                //$(".expandedMenu").toggleClass('displayClass');
+                $(this).closest("div").children('.expandedMenu').toggleClass('displayClass');
+                //$('.expandedMenu:not(this)').css("display", "none");
+                //--$('.expandedMenu').not($(this).closest("div").children('.expandedMenu')).toggleClass('displayClass')
+                               //$('.expandedMenu').css("display", "inline");
+                //alert($("#expandableMenu").attr("id"))
+            });
+
+                        $(".expandableSubMenu").click(function(e) {
+
+
+                //$(".expandedMenu").toggleClass('displayClass');
+                 var expandingSubMenu   =    $(this).closest("div").children('.expandedSubMenu')
+                expandingSubMenu.toggleClass('displayClass');
+                //$('.expandedMenu:not(this)').css("display", "none");
+                //$('.expandedSubMenu').not(expandingSubMenu).css("display", "none");
+                               //$('.expandedMenu').css("display", "inline");
+                //alert($("#expandableMenu").attr("id"))
+            });
+
         });
 
 
     </script>
 </head>
 
-<div id="header"></div>
-<div id="mainContainer">
-<div id="design" class="phasepanel">
-    <span class="phaseHeader">Phase1</span>
-    <ul class="movable">
-        <li>
-            <a href="#" class="shadow_box" id="card1">
-                <table width='100%'>
-                    <tr>
-                        <td><h2>Story #1</h2></td>
-                        <td><input type="button" value="Edit" id="edit1"/></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><p>Text Content #1</p></td>
-                    </tr>
-                </table>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Kanban dashboard</h2>
+<div id="header">
+    <span id="productName">Live Iterations</span>
 
-                <p>As a ProjectAdmin I should be able to move any cards on my project</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #3</h2>
+    <div id="menuBar">
+        <div id="portfolioView">
+            <img src="images/icons/custom/briefcase_32.png" alt="Portfolio View">
+            <!--<input type="button" value="Add New Project">-->
+        </div>
 
-                <p>Text Content #3</p>
-                <span></span>
-            </a>
-        </li>
-    </ul>
-</div>
+        <div id="projectsMenu"
+             style="display:inline; padding: 18px 0 0 5px;margin: 0 0 0 5px;-webkit-border-radius: 5px;border: 1px inset #4a2c0e;">
+            <img src="images/icons/custom/icon-10.png" title="Projects View" class="expandableMenu">
 
-<div id="code" class="phasepanel">
-    <span class="phaseHeader">Phase2</span>
-    <ul class="movable">
-        <li>
-            <a href="#">
-                <h2>Story #1</h2>
+            <div id="projectDetailMenu" class="expandedMenu displayClass">
+                <select>
+                    <option>Select Project</option>
+                    <option>Project 1</option>
+                </select>
 
-                <p>Text Content #1</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #2</h2>
+                <div id="themeMenu"
+                     style="display:inline; padding: 18px 0 0 5px;margin: 0 0 0 5px;-webkit-border-radius: 5px;border: 1px inset #4a2c0e;">
+                    <img src="images/icons/custom/Contacts-alt1.png" class="expandableSubMenu">
 
-                <p>Text Content #2</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #3</h2>
+                    <div id="themeDetailMenu" class="expandedSubMenu displayClass">
+                        <img src="images/icons/custom/plus_16.png" title="Add New Theme"  style="vertical-align:top;">
+                    </div>
+                </div>
 
-                <p>Text Content #3</p>
-                <span></span>
-            </a>
-        </li>
-    </ul>
-</div>
+                <div id="storyMenu"
+                     style="display:inline; padding: 18px 0 0 5px;margin: 0 0 0 5px;-webkit-border-radius: 5px;border: 1px inset #4a2c0e;">
+                    <img src="images/icons/custom/Contacts-alt3.png" class="expandableSubMenu">
 
-<div id="intg" class="phasepanel">
-    <span class="phaseHeader">Phase3</span>
-    <ul class="movable">
-        <li>
-            <a href="#">
-                <h2>Story #1</h2>
+                    <div id="storyDetailMenu" class="expandedSubMenu displayClass">
+                        <img src="images/icons/custom/plus_16.png" title="Add New Story" style="vertical-align:top;">
+                    </div>
+                </div>
+            </div>
+            <!--<input type="button" value="Add New Story">-->
+            <!-- <button class="sexybutton sexyyellow"><span><span><span class="theme">Portfolio</span></span></span></button>-->
 
-                <p>Text Content #1</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #2</h2>
+            <!--<img src="images/icons/custom/page_text_add_32.png" style="height:37%">-->
+        </div>
 
-                <p>Text Content #2</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #3</h2>
-
-                <p>Text Content #3</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #3</h2>
-
-                <p>Text Content #3</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #3</h2>
-
-                <p>Text Content #3</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #3</h2>
-
-                <p>Text Content #3</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #3</h2>
-
-                <p>Text Content #3</p>
-                <span></span>
-            </a>
-        </li>
-    </ul>
-</div>
-
-<div id="qa" class="phasepanel">
-    <span class="phaseHeader">Phase4</span>
-    <ul class="movable">
-        <li>
-            <a href="#">
-                <h2>Story #1</h2>
-
-                <p>Text Content #1</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #2</h2>
-
-                <p>Text Content #2</p>
-                <span></span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2>Story #3</h2>
-
-                <p>Text Content #3</p>
-                <span></span>
-            </a>
-        </li>
-    </ul>
-</div>
+        <img src="images/icons/custom/label_32.png" style="height:32%; margin: 0 0 0 10px">
     </div>
+
+    <input results="20" type='search' class="search" placeholder='Search'/>
+</div>
+<div id="mainContainer">
+    <div id="design" class="phasepanel">
+        <span class="phaseHeader">Phase1</span>
+        <ul class="movable">
+            <li>
+                <a href="#" class="shadow_box" id="card1">
+                    <table width='100%'>
+                        <tr>
+                            <td><h2>Story #1</h2></td>
+                            <td><input type="button" value="Edit" id="edit1"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p>Text Content #1</p></td>
+                        </tr>
+                    </table>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Kanban dashboard</h2>
+
+                    <p>As a ProjectAdmin I should be able to move any cards on my project</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #3</h2>
+
+                    <p>Text Content #3</p>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="code" class="phasepanel">
+        <span class="phaseHeader">Phase2</span>
+        <ul class="movable">
+            <li>
+                <a href="#">
+                    <h2>Story #1</h2>
+
+                    <p>Text Content #1</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #2</h2>
+
+                    <p>Text Content #2</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #3</h2>
+
+                    <p>Text Content #3</p>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="intg" class="phasepanel">
+        <span class="phaseHeader">Phase3</span>
+        <ul class="movable">
+            <li>
+                <a href="#">
+                    <h2>Story #1</h2>
+
+                    <p>Text Content #1</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #2</h2>
+
+                    <p>Text Content #2</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #3</h2>
+
+                    <p>Text Content #3</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #3</h2>
+
+                    <p>Text Content #3</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #3</h2>
+
+                    <p>Text Content #3</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #3</h2>
+
+                    <p>Text Content #3</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #3</h2>
+
+                    <p>Text Content #3</p>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="qa" class="phasepanel">
+        <span class="phaseHeader">Phase4</span>
+        <ul class="movable">
+            <li>
+                <a href="#">
+                    <h2>Story #1</h2>
+
+                    <p>Text Content #1</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #2</h2>
+
+                    <p>Text Content #2</p>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>Story #3</h2>
+
+                    <p>Text Content #3</p>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <!-- first overlay. id attribute matches our selector -->
 <div class="apple_overlay" id="noteOverLay">
