@@ -14,66 +14,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
     <script src="jquery.tools.min.js"></script>
 
-    <script>
-        $(function() {
-            /*$(".sortable").sortable({
-             revert: true,
-             helper: "clone"
-             });
-             $("#draggable").draggable({
-             connectToSortable: ".sortable",
-             helper: "clone",
-             revert: "true"
-             });*/
+    <script src="dashboard.js"></script>
 
-            $(function() {
-                /* $("#sortable1, #sortable2").sortable({
-                 connectWith: ".connectedSortable"
-                 }).disableSelection();*/
-
-                $(".movable").sortable({
-                    connectWith: ".movable"
-                });
-                $(".movable").disableSelection();
-
-            });
-
-            $("#edit1").click(function() {
-
-                $("#noteOverLay").overlay({
-                    closeOnClick: false,
-                    speed: 'fast',
-                    effect: 'apple',
-                    load: true
-                });
-                $("#noteOverLay").data('overlay').load();
-            });
-
-            $(".expandableMenu").click(function(e) {
-                $(this).closest("div").children('.expandedMenu').toggleClass('displayClass');
-            });
-
-            $(".expandableSubMenu").click(function(e) {
-                //$(".expandedMenu").toggleClass('displayClass');
-                var expandingSubMenu = $(this).closest("div").children('.expandedSubMenu');
-                expandingSubMenu.toggleClass('displayClass');
-                //$('.expandedMenu:not(this)').css("display", "none");
-       //$('.expandedSubMenu').not(expandingSubMenu).toggleClass('displayClass');
-                //$('.expandedMenu').css("display", "inline");
-                //alert($("#expandableMenu").attr("id"))
-            });
-
-        });
-
-
-    </script>
 </head>
 
 <div id="header">
     <span id="productName">Live Iterations</span>
 
     <div id="menuBar">
-        <div id="portfolioView">
+        <div id="portfolioView" class="menuItemBorder">
             <img src="images/icons/custom/briefcase_32.png" alt="Portfolio View">
             <!--<input type="button" value="Add New Project">-->
         </div>
@@ -83,9 +32,10 @@
             <img src="images/icons/custom/icon-10.png" title="Projects View" class="expandableMenu">
 
             <div id="projectDetailMenu" class="expandedMenu displayClass">
-                <select>
+                <select class="projectSelect">
                     <option>Select Project</option>
-                    <option>Project 1</option>
+                    <option>Live Iterations</option>
+                    <option>Google Maps</option>
                 </select>
 
                 <div id="themeMenu"
@@ -93,7 +43,8 @@
                     <img src="images/icons/custom/Contacts-alt1.png" class="expandableSubMenu">
 
                     <div id="themeDetailMenu" class="expandedSubMenu displayClass">
-                        <img src="images/icons/custom/plus_16.png" title="Add New Theme" style="vertical-align:top;">
+                        <img id="newTheme" src="images/icons/custom/plus_16.png" title="Add New Theme"
+                             style="vertical-align:top;">
                     </div>
                 </div>
 
@@ -102,7 +53,8 @@
                     <img src="images/icons/custom/Contacts-alt3.png" class="expandableSubMenu">
 
                     <div id="storyDetailMenu" class="expandedSubMenu displayClass">
-                        <img src="images/icons/custom/plus_16.png" title="Add New Story" style="vertical-align:top;">
+                        <img id="newStory" src="images/icons/custom/plus_16.png" title="Add New Story"
+                             style="vertical-align:top;">
                     </div>
                 </div>
             </div>
@@ -112,7 +64,9 @@
             <!--<img src="images/icons/custom/page_text_add_32.png" style="height:37%">-->
         </div>
 
-        <img src="images/icons/custom/label_32.png" style="height:32%; margin: 0 0 0 10px">
+        <div id="tags" class="menuItemBorder">
+            <img src="images/icons/custom/label_32.png" style="height:32%;">
+        </div>
     </div>
 
     <input results="20" type='search' class="search" placeholder='Search'/>
