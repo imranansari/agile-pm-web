@@ -55,8 +55,8 @@ ul li:nth-child(even) a {
 }
 
 #mainContainer {
-    height:2000px;
-    width:100%;
+    height: 2000px;
+    width: 100%;
     background-color: #f9f9f2;
 }
 
@@ -81,17 +81,19 @@ ul li:nth-child(odd) a {
 }
 
 ul li a span {
-    width: 100%;
-    height: 15px;
-    position: absolute;
-    bottom: -30px; /* ~equal to the height + shadow y offset + shadow blur radius */
-    right: 0px;
-    box-shadow: 0px -10px 5px #fff;
-    -moz-box-shadow: 0px -10px 5px #fff;
-    -webkit-box-shadow: 0px -10px 5px #e8e8e8;
-    border-radius: 50% / 7px;
-    -moz-border-radius: 50% / 7px;
-    -webkit-border-radius: 400px 20px; /* webkit browsers apparently can't use a % for ellipse border radius */
+
+    width:100%;
+	height:15px;
+	position:absolute;
+	bottom:-30px; /* ~equal to the height + shadow y offset + shadow blur radius */
+	right:0px;
+	box-shadow:0px -10px 5px #fff;
+	-moz-box-shadow:0px -10px 5px #fff;
+	-webkit-box-shadow:0px -10px 5px #fff;
+	border-radius: 50% / 7px;
+	-moz-border-radius:50% / 7px;
+	-webkit-border-radius: 400px 20px; /* webkit browsers apparently can't use a % for ellipse border radius */
+
 }
 
 /**
@@ -136,8 +138,7 @@ ul li a {
 ul li a:hover, ul li a:focus {
     box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-    -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-    /*-webkit-transform: scale(1.05);*/
+    -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7); /*-webkit-transform: scale(1.05);*/
     -moz-transform: scale(1.05);
     -o-transform: scale(1.05);
     position: relative;
@@ -159,8 +160,10 @@ ol li a {
 
 .phasepanel {
     float: left;
-    border: 1px #dcdcdc solid;
-/ / width : 125 px;
+    border: 1px #540223 solid;
+    width: 295px;
+    border-style: dotted;
+    height: 100%;
 }
 
 /* Overlays */
@@ -208,19 +211,77 @@ ol li a {
 }
 
 #header {
-    background-image:url("img/header.png");
-    height:78px;
+    background-image: url("img/header.png");
+    height: 78px;
     background-size: 99.99%;
-    background-repeat:no-repeat;
+    width: 1190px;
+    background-repeat: no-repeat;
 }
 
 .phaseHeader {
-    text-align:center;
-    color:white;
+    text-align: center;
+    color: white;
     margin-left: auto;
     margin-right: auto;
-    background-color:#6d4d2f;
-    width:100%;
-    display:block;
+    background-color: #6d4d2f;
+    width: 100%;
+    display: block;
+    font-family: Monaco;
+}
+
+.search {
+    float: right;
+    position: relative;
+    top: 48px;
+    right: 8px;
+    width: 150px;
+}
+
+#productName {
+    float: left;
+    position: relative;
+    color: white;
+    top: 10px;
+    right: -20px;
+    font-family: 'Lobster', arial, serif;
+    font-size: 40px;
+}
+
+#menuBar {
+    display: inline;
+    position: relative;
+    top: 35px;
+    left: 400px;
+}
+
+}
+#projectsMenu {
+    position: relative;
+    display: inline;
+}
+
+#portfolioView {
+    position: relative;
+    display: inline;
+}
+
+.expandedMenu {
+         display:inline;
+}
+
+.expandedSubMenu {
+         display:inline;
+}
+
+.displayClass {
+        display:none;
+}
+
+.menuItemBorder {
+    display:inline;
+    padding: 18px 0 0 5px;
+    margin: 0 0 0 5px;
+    -webkit-border-radius: 5px;
+    border: 1px inset #4a2c0e;"
 }
 
