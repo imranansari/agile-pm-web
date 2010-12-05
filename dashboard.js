@@ -21,15 +21,25 @@ $(function() {
 
     });
 
-    $("#edit1").click(function() {
+    /*  $(".editNote").click(function() {
 
-        $("#noteOverLay").overlay({
-            closeOnClick: false,
-            speed: 'fast',
-            effect: 'apple',
-            load: true
+     $("#noteOverLay").overlay({
+     closeOnClick: false,
+     speed: 'fast',
+     effect: 'apple',
+     load: true
+     });
+     $("#noteOverLay").data('overlay').load();
+     });*/
+
+    $('.editNote').click(function() {
+        $("#editableNote").lightbox_me({
+            closeClick: false,
+            overlaySpeed:100,
+            closeSelector:".closeNote",
+            appearEffect:'fadeIn',
+            overlayDisappearSpeed: 100
         });
-        $("#noteOverLay").data('overlay').load();
     });
 
     $(".expandableMenu").click(function(e) {
