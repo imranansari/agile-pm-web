@@ -46,15 +46,6 @@ ul li:nth-child(even) div {
     -webkit-transform: rotate(0.7deg);
 }
 
-#n1 {
-    text-decoration: none;
-    color: #000;
-    display: block;
-    height: 482px;
-    padding: 1em;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
-}
-
 #mainContainer {
     height: 2000px;
     width: 100%;
@@ -82,7 +73,6 @@ ul li:nth-child(odd) div {
 }
 
 ul li div span {
-
     width: 100%;
     height: 15px;
     position: absolute;
@@ -94,7 +84,6 @@ ul li div span {
     border-radius: 50% / 7px;
     -moz-border-radius: 50% / 7px;
     -webkit-border-radius: 400px 20px; /* webkit browsers apparently can't use a % for ellipse border radius */
-
 }
 
 /**
@@ -294,4 +283,136 @@ ol li div {
     font-size: larger;
 }
 
+.editNote {
+    display: inline;
+    position: relative;
+    top: -10px;
+    left: 198px;
+    cursor: pointer;
+}
 
+.editableNote {
+    padding: 0.3em;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
+}
+
+.editableNoteHeader {
+    position: relative;
+    background-color: #faf3b3;
+    height: 25px;
+    vertical-align: text-bottom;
+    font-size: 160%;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+
+.closeNote {
+    position: relative;
+    float: right;
+    top: -10px;
+    cursor: pointer;
+}
+
+/**Forms**/
+
+/* Labels */
+fieldset div label {
+    color: #666;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.1;
+    margin: 7px 0 0 0; /*width: 140px;*/
+}
+
+/* Input defaults */
+fieldset div input,
+fieldset div textarea,
+fieldset div select {
+    border: 1px solid #a3b4c4;
+    border-color: #636d77 #a3b4c4 #c7d2de;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1;
+    margin: 0;
+}
+
+fieldset {
+    margin: 3px;
+    border: 0px;
+}
+
+/* Focus */
+fieldset div input:focus,
+fieldset div textarea:focus,
+fieldset div select:focus {
+    border-color: #636d77;
+}
+
+/* Text inputs */
+fieldset div input {
+    background: #FFF url(images/bg-form-input.gif) repeat-x left top;
+    padding: 6px 5px;
+    width: 288px;
+}
+
+/* Select menus */
+fieldset div select {
+    padding: 0 0 0 3px;
+    width: 291px;
+}
+
+/* Textareas */
+fieldset div textarea {
+    background: #FFF url(images/bg-form-input.gif) repeat-x left top;
+    height: 89px;
+    padding: 6px 5px;
+    width: 288px;
+}
+
+/* File Upload */
+fieldset div input[type=file] {
+    background: none;
+    border: inherit;
+    padding: 0;
+}
+
+/* Radio buttons + checkboxes */
+fieldset div ul {
+    margin: 5px 0 0 0;
+}
+
+fieldset div ul li {
+    margin: 0 0 5px;
+    padding: 0;
+}
+
+fieldset div ul li label {
+    display: inline;
+    float: none;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset div ul li input {
+    background: none;
+    border: none;
+    display: inline;
+    margin: 0 5px 0 0;
+    padding: 0;
+    width: auto;
+}
+
+fieldset div.controls {
+    margin: 25px 0 0;
+    padding: 0;
+}
+
+.formControls {
+    margin: 20px 0 0;
+    padding: 0;
+    float:right;
+}
