@@ -7,12 +7,15 @@
     <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin' rel='stylesheet' type='text/css'>
 
     <link href="board.css" rel="stylesheet" type="text/css">
-    <link href="overlay-apple.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="sexybuttons.css" type="text/css"/>
+
+    <link rel="stylesheet" href="demo.css" type="text/css" media="all"/>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
-    <script src="jquery.tools.min.js"></script>
+    <script src="http://github.com/janl/mustache.js/raw/master/mustache.js"></script>
+    <script src="jquery.lightbox_me.js"></script>
 
     <script src="dashboard.js"></script>
 
@@ -50,7 +53,7 @@
 
                 <div id="storyMenu"
                      style="display:inline; padding: 18px 0 0 5px;margin: 0 0 0 5px;-webkit-border-radius: 5px;border: 1px inset #4a2c0e;">
-                    <img src="images/icons/custom/Contacts-alt3.png" class="expandableSubMenu">
+                    <img src="images/icons/custom/Notes_32.png" class="expandableSubMenu">
 
                     <div id="storyDetailMenu" class="expandedSubMenu displayClass">
                         <img id="newStory" src="images/icons/custom/plus_16.png" title="Add New Story"
@@ -77,15 +80,12 @@
         <ul class="movable">
             <li>
                 <div class="shadow_box" id="card1">
-                    <table width='100%'>
-                        <tr>
-                            <td><h2>Story #1</h2></td>
-                            <td><input type="button" value="Edit" id="edit1"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><p>Text Content #1</p></td>
-                        </tr>
-                    </table>
+
+                    <img src="images/icons/custom/pencil_16.png" class="editNote">
+
+                    <h2 style="display:inline;">Editable Story</h2>
+
+                    <p>The Story notes should be editable</p>
                     <span></span>
                 </div>
             </li>
@@ -231,13 +231,40 @@
     </div>
 </div>
 
-<!-- first overlay. id attribute matches our selector -->
-<div class="apple_overlay" id="noteOverLay">
-    <!-- image details -->
-    <div id="n1">
-        <input type="text">
-        <input type="button" value="test">
+<div id="editableNote" class="editableNote">
+    <div class="editableNoteHeader">
+        <span class="closeNote"><img src="images/icons/custom/close_16.png"></span>
+        Editable Story
     </div>
+    <form action="#" method="get">
+        <fieldset>
+            <!-- Email -->
+            <div>
+                <label for="email">Your email address</label>
+                <input type="text" name="email" id="email"/>
+            </div>
+
+            <!-- Password -->
+            <div>
+                <label for="password">Create Password</label>
+                <input type="password" name="password" id="password"/>
+            </div>
+
+            <!-- Password Confirmation -->
+            <div>
+                <label for="password_confirmation">Confirm Password</label>
+                <input type="password" name="password_confirmation" id="password_confirmation"/>
+            </div>
+
+        </fieldset>
+
+
+        <!-- Controls -->
+        <div class="formControls">
+            <input id="submit" name="submit" type="submit" value="Create Profile"/>
+        </div>
+        </fieldset>
+    </form>
 
 </div>
 
