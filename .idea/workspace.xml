@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70cf1c9c-c890-42d0-befa-02b645264220" name="Default" comment="checkin">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DragDropTest2.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DragDropTest.html" afterPath="$PROJECT_DIR$/temp/DragDropTest.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/jquery.tools.min.js" afterPath="$PROJECT_DIR$/temp/jquery.tools.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AgilePM-Web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,19 +61,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="board.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/board.html">
+      <file leaf-file-name="flex-box.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/css/flex-box.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="288" column="65" selection-start="9439" selection-end="9439" vertical-scroll-proportion="0.28308824">
+            <state line="13" column="14" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flex-box.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/css/flex-box.css">
+      <file leaf-file-name="board.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/board.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="14" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
+            <state line="11" column="32" selection-start="536" selection-end="536" vertical-scroll-proportion="0.28947368">
               <folding />
             </state>
           </provider>
@@ -169,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/sexybuttons.css" />
         <option value="$PROJECT_DIR$/shadow.css" />
         <option value="$PROJECT_DIR$/demo.html" />
@@ -185,6 +182,7 @@
         <option value="$PROJECT_DIR$/board.css" />
         <option value="$PROJECT_DIR$/resources/css/board.css" />
         <option value="$PROJECT_DIR$/DragDropTest2.html" />
+        <option value="$PROJECT_DIR$/board.html" />
       </list>
     </option>
   </component>
@@ -238,56 +236,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AgilePM-Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AgilePM-Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AgilePM-Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AgilePM-Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AgilePM-Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AgilePM-Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AgilePM-Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -504,7 +452,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32010135" sideWeight="0.6707317" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32010135" sideWeight="0.6707317" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -528,7 +476,7 @@
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="flexbox changes and resource refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -561,6 +509,8 @@
     <MESSAGE value="checkin" />
     <MESSAGE value="flex-box updates" />
     <MESSAGE value="flexbox changes and resource refactor" />
+    <MESSAGE value="updates" />
+    <MESSAGE value="rename" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -570,11 +520,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/css/flex-box.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="14" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/temp/cluetip.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="209" column="19" selection-start="13898" selection-end="13904" vertical-scroll-proportion="0.0">
@@ -657,9 +602,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/css/flex-box.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="14" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/board.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="288" column="65" selection-start="9439" selection-end="9439" vertical-scroll-proportion="0.28308824">
+        <state line="11" column="32" selection-start="536" selection-end="536" vertical-scroll-proportion="0.28947368">
           <folding />
         </state>
       </provider>
