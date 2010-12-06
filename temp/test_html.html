@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="cluetip-demo.css" type="text/css"/>
+    <link rel="stylesheet" href="jquery.cluetip.css" type="text/css"/>
+    <link rel="stylesheet" href="cluetip-demo.css" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
+    <script src="jquery.cluetip.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+        $('#sticky').cluetip({activation: 'click', sticky: true, closePosition: 'title',local:true, arrows: true});
+        });
+    </script>
+
+</head>
+
+<body>
+
+<a id="sticky" href="test_html.html#editNote" rel="editNote">test</a>
+
+<div id="editNote" style="display:none;">
+    test test
+</div>
+
+</body>
+</html>

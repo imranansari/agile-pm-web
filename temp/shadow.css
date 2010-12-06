@@ -1,0 +1,37 @@
+/* Assorted styles for general beautification */
+* {padding:0px; margin:0px;}
+.shadow_box, .right_curl {margin:5px; border:solid 1px #ddd; background:#fff;}
+p {padding:5px;}
+h3 {margin:1px; color:#fff; background: #333; padding:5px;}
+ul {width:300px;}
+ul li {list-style-type:disc; margin-left:30px; padding:0px 5px 5px 0px;}
+
+/* The bottom curved shadow styles */
+.shadow_box {
+	-moz-box-shadow:0px 10px 5px #ccc;
+	-webkit-box-shadow:0px 10px 5px #ccc;
+	box-shadow:0px 10px 5px #ccc;
+	float:left;
+	position:relative;
+}
+
+.shadow_box span {
+	width:100%;
+	height:15px;
+	position:absolute;
+	bottom:-30px; /* ~equal to the height + shadow y offset + shadow blur radius */
+	right:0px;
+	box-shadow:0px -10px 5px #fff;
+	-moz-box-shadow:0px -10px 5px #fff;
+	-webkit-box-shadow:0px -10px 5px #fff;
+	border-radius: 50% / 7px;
+	-moz-border-radius:50% / 7px;
+	-webkit-border-radius: 400px 20px; /* webkit browsers apparently can't use a % for ellipse border radius */
+}
+
+/* Other styles used to modify main shadow styles */
+.fixed_200 {width:200px;}
+.rounded {-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+.background {float:left; background:#968; padding:20px; margin:5px;}
+.background .shadow_box {box-shadow: 0px 10px 5px #555; -moz-box-shadow:0px 10px 5px #555; -webkit-box-shadow:0px 10px 5px #555;}
+.background .shadow_box span {box-shadow:0px -10px 5px #968; -moz-box-shadow:0px -10px 5px #968; -webkit-box-shadow:0px -10px 5px #968;}
