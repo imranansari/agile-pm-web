@@ -6,18 +6,19 @@
     <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin' rel='stylesheet' type='text/css'>
 
-    <link href="board.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="sexybuttons.css" type="text/css"/>
+    <link href="resources/css/board.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="resources/css/sexybuttons.css" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/flex-box.css">
 
-    <link rel="stylesheet" href="demo.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="temp/demo.css" type="text/css" media="all"/>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
     <script src="http://github.com/janl/mustache.js/raw/master/mustache.js"></script>
-    <script src="jquery.lightbox_me.js"></script>
+    <script src="resources/js/jquery.lightbox_me.js"></script>
 
-    <script src="dashboard.js"></script>
+    <script src="resources/js/dashboard.js"></script>
 
 </head>
 
@@ -26,13 +27,13 @@
 
     <div id="menuBar">
         <div id="portfolioView" class="menuItemBorder">
-            <img src="images/icons/custom/briefcase_32.png" alt="Portfolio View">
+            <img src="resources/images/briefcase_32.png" alt="Portfolio View">
             <!--<input type="button" value="Add New Project">-->
         </div>
 
         <div id="projectsMenu"
              style="display:inline; padding: 18px 0 0 5px;margin: 0 0 0 5px;-webkit-border-radius: 5px;border: 1px inset #4a2c0e;">
-            <img src="images/icons/custom/icon-10.png" title="Projects View" class="expandableMenu">
+            <img src="resources/images/icon-10.png" title="Projects View" class="expandableMenu">
 
             <div id="projectDetailMenu" class="expandedMenu displayClass">
                 <select class="projectSelect">
@@ -43,20 +44,20 @@
 
                 <div id="themeMenu"
                      style="display:inline; padding: 18px 0 0 5px;margin: 0 0 0 5px;-webkit-border-radius: 5px;border: 1px inset #4a2c0e;">
-                    <img src="images/icons/custom/Contacts-alt1.png" class="expandableSubMenu">
+                    <img src="resources/images/Contacts-alt1.png" class="expandableSubMenu">
 
                     <div id="themeDetailMenu" class="expandedSubMenu displayClass">
-                        <img id="newTheme" src="images/icons/custom/plus_16.png" title="Add New Theme"
+                        <img id="newTheme" src="resources/images/plus_16.png" title="Add New Theme"
                              style="vertical-align:top;">
                     </div>
                 </div>
 
                 <div id="storyMenu"
                      style="display:inline; padding: 18px 0 0 5px;margin: 0 0 0 5px;-webkit-border-radius: 5px;border: 1px inset #4a2c0e;">
-                    <img src="images/icons/custom/Notes_32.png" class="expandableSubMenu">
+                    <img src="resources/images/Notes_32.png" class="expandableSubMenu">
 
                     <div id="storyDetailMenu" class="expandedSubMenu displayClass">
-                        <img id="newStory" src="images/icons/custom/plus_16.png" title="Add New Story"
+                        <img id="newStory" src="resources/images/plus_16.png" title="Add New Story"
                              style="vertical-align:top;">
                     </div>
                 </div>
@@ -68,7 +69,7 @@
         </div>
 
         <div id="tags" class="menuItemBorder">
-            <img src="images/icons/custom/label_32.png" style="height:32%;">
+            <img src="resources/images/label_32.png" style="height:32%;">
         </div>
     </div>
 
@@ -81,7 +82,7 @@
             <li>
                 <div class="shadow_box" id="card1">
 
-                    <img src="images/icons/custom/pencil_16.png" class="editNote">
+                    <img src="resources/images/pencil_16.png" class="editNote">
 
                     <h2 style="display:inline;">Editable Story</h2>
 
@@ -233,41 +234,76 @@
 
 <div id="editableNote" class="editableNote">
     <div class="editableNoteHeader">
-        <span class="closeNote"><img src="images/icons/custom/close_16.png"></span>
+        <span class="closeNote"><img src="resources/images/close_16.png"></span>
         Editable Story
     </div>
+
     <form action="#" method="get">
         <fieldset>
-            <!-- Email -->
-            <div>
-                <label for="email">Your email address</label>
-                <input type="text" name="email" id="email"/>
-            </div>
+            <div class="flex-container">
+                <div class="col-1 col-1-flex">
 
-            <!-- Password -->
-            <div>
-                <label for="password">Create Password</label>
-                <input type="password" name="password" id="password"/>
-            </div>
+                    <div>
+                        <label for="email">Story Name</label>
+                        <input type="text" name="email" id="email"/>
+                    </div>
 
-            <!-- Password Confirmation -->
-            <div>
-                <label for="password_confirmation">Confirm Password</label>
-                <input type="password" name="password_confirmation" id="password_confirmation"/>
-            </div>
+                    <div>
+                        <label for="storyType">Story Type</label>
+                        <select id="storyType">
+                            <option>test</option>
+                        </select>
+                    </div>
 
+                    <div>
+                        <label for="storyDescription">Story Description</label>
+                        <textarea rows="2" cols="20">
+                        </textarea>
+                    </div>
+                </div>
+
+
+                <div class="col-2 col-2-flex">
+                    <div>
+                        <label for="dueDate">Due Date</label>
+                        <input id="dueDate" type="date"/>
+                    </div>
+
+                    <div>
+                        <label for="assignedTo">Assigned To</label>
+                        <select id="assignedTo">
+                            <option>test</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="estimate">Estimate</label>
+                        <input type="text" name="estimate" id="estimate"/>
+                    </div>
+
+                    <div>
+                        <label for="pct_complete">% Complete</label>
+                        <input type="text" name="pct_complete" id="pct_complete"/>
+                    </div>
+
+                    <div>
+                        <label for="storyTags">Tags</label>
+                        <input type="password" name="tags" id="storyTags"/>
+                    </div>
+                </div>
+
+            </div>
         </fieldset>
 
 
         <!-- Controls -->
         <div class="formControls">
-            <input id="submit" name="submit" type="submit" value="Create Profile"/>
+            <button type="reset" class="sexybutton sexysimple sexyblack">Cancel</button>
+            <button type="reset" class="sexybutton sexysimple sexyyellow">Save Story to Back Log</button>
+            <button type="reset" class="sexybutton sexysimple sexygreen">Save Story & Add to Queue</button>
         </div>
         </fieldset>
     </form>
-
 </div>
-
-
 </body>
 </html>
