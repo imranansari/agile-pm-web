@@ -175,7 +175,7 @@ ol li div {
 
 /* close button positioned on upper right corner */
 .simple_overlay .close {
-    background-image: url(img/close.png);
+    background-image: url(../../img/close.png);
     position: absolute;
     right: -15px;
     top: -15px;
@@ -201,7 +201,7 @@ ol li div {
 }
 
 #header {
-    background-image: url("img/header.png");
+    background-image: url("../../img/header.png");
     height: 78px;
     background-size: 99.99%;
     width: 1190px;
@@ -293,7 +293,8 @@ ol li div {
 
 .editableNote {
     padding: 0.3em;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
+    width: 60%;
+    background-color: #fffdde; /*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));*/
 }
 
 .editableNoteHeader {
@@ -303,7 +304,7 @@ ol li div {
     vertical-align: text-bottom;
     font-size: 160%;
     font-weight: bold;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .closeNote {
@@ -319,8 +320,8 @@ ol li div {
 fieldset div label {
     color: #666;
     font-size: 1em;
-    font-weight: bold;
-    line-height: 1.1;
+    font-weight: normal;
+    line-height: 1.5em;
     margin: 7px 0 0 0; /*width: 140px;*/
 }
 
@@ -352,20 +353,22 @@ fieldset div select:focus {
 
 /* Text inputs */
 fieldset div input {
-    background: #FFF url(images/bg-form-input.gif) repeat-x left top;
     padding: 6px 5px;
     width: 288px;
+    border-radius: 3px;
+    font-size: larger;
 }
 
 /* Select menus */
 fieldset div select {
     padding: 0 0 0 3px;
     width: 291px;
+    border-radius: 3px;
+    font-size: larger;
 }
 
 /* Textareas */
 fieldset div textarea {
-    background: #FFF url(images/bg-form-input.gif) repeat-x left top;
     height: 89px;
     padding: 6px 5px;
     width: 288px;
@@ -414,5 +417,5 @@ fieldset div.controls {
 .formControls {
     margin: 20px 0 0;
     padding: 0;
-    float:right;
+    float: right;
 }
