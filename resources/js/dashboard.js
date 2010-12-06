@@ -58,24 +58,24 @@ $(function() {
 
     $("#newTheme").click(function() {
 
-        $("#noteOverLay").overlay({
-            closeOnClick: false,
-            speed: 'fast',
-            effect: 'apple',
-            load: true
+        $("#editableNote").lightbox_me({
+            closeClick: false,
+            overlaySpeed:100,
+            closeSelector:".closeNote",
+            appearEffect:'fadeIn',
+            overlayDisappearSpeed: 100
         });
-        $("#noteOverLay").data('overlay').load();
     });
 
     $("#newStory").click(function() {
 
-        $("#noteOverLay").overlay({
-            closeOnClick: false,
-            speed: 'fast',
-            effect: 'apple',
-            load: true
+        $("#editableNote").lightbox_me({
+            closeClick: false,
+            overlaySpeed:100,
+            closeSelector:".closeNote",
+            appearEffect:'fadeIn',
+            overlayDisappearSpeed: 100
         });
-        $("#noteOverLay").data('overlay').load();
     });
 
 });
