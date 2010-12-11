@@ -31,8 +31,8 @@ ul li:nth-child(even) .workItem {
     color: #000;
     display: block;
     height: 145px;
-    width: 200px;
-    padding: 1em;
+    width: 210px;
+    padding: 15px;
 / / -moz-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, 1 );
 / / -webkit-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
 / / box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
@@ -58,8 +58,8 @@ ul li:nth-child(odd) .workItem {
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
     display: block;
     height: 145px;
-    width: 200px;
-    padding: 1em;
+    width: 210px;
+    padding: 15px;
 / / -moz-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, 1 );
 / / -webkit-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
 / / box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
@@ -97,7 +97,7 @@ ul li .workItem:after {
     width: 80px;
     height: 10px;
     top: -6px;
-    left: 25%;
+    left: 30%;
     border: 1px solid #fff;
     background: rgba(254, 254, 254, .6);
     -webkit-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
@@ -110,7 +110,7 @@ ul li .workItem:after {
     position: relative;
     left: -34px;
     top: 9px;
-    width:0px;
+    width: 0px;
     color: #f9f9f2;
     font-size: 9px;
     font-weight: bold;
@@ -309,7 +309,7 @@ ol li div {
     display: inline;
     position: relative;
     top: -10px;
-    left: 198px;
+    left: 205px;
     cursor: pointer;
 }
 
@@ -456,5 +456,30 @@ fieldset div.controls {
     padding: 1px 1px 0 !important;
     -webkit-border-radius: 4px !important;
     top: -180px;
-    left: 220px;
+    left: -5px;
+}
+
+.workItemFooter {
+    position: relative;
+    top: 68px;
+}
+
+.workItemFooter div {
+    float: left;
+    color: rgba(0, 0, 0, .5);
+    font-size: 12px;
+    line-height: 16px;
+    font-family: HelveticaNeue-Medium, Helvetica, sans-serif;
+}
+
+.comments {
+    background: url('../images/comments.png') 0 0 no-repeat;
+    padding-left: 20px;
+    margin-right: 10px;
+}
+
+.assigned {
+    background: url('../images/user-silhouette.png') 0 0 no-repeat;
+    padding-left: 20px;
+    margin-right: 10px;
 }
