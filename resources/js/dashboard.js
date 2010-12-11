@@ -46,17 +46,28 @@ $(function() {
         $(this).closest("div").children('.expandedMenu').toggleClass('displayClass');
     });
 
-    $(".expandableSubMenu").click(function(e) {
+  /*  $(".expandableSubMenu").click(function(e) {
         //$(".expandedMenu").toggleClass('displayClass');
-        var expandingSubMenu = $(this).closest("div").children('.expandedSubMenu');
-        expandingSubMenu.toggleClass('displayClass');
+        // var expandingSubMenu = $(this).closest("div").children('.expandedSubMenu');
+        //expandingSubMenu.toggleClass('displayClass');
         //$('.expandedMenu:not(this)').css("display", "none");
         //$('.expandedSubMenu').not(expandingSubMenu).toggleClass('displayClass');
+        //$('.expandedSubMenu').not(expandingSubMenu).css("display", 'none');
         //$('.expandedMenu').css("display", "inline");
         //alert($("#expandableMenu").attr("id"))
+    });*/
+
+    $('#epicMenu').click(function() {
+        $('#epicMenu .expandedSubMenu').css("display", 'inline');
+        $('#storyMenu .expandedSubMenu').css("display", 'none');
     });
 
-    $("#newTheme").click(function() {
+    $('#storyMenu').click(function() {
+        $('#storyMenu .expandedSubMenu').css("display", 'inline');
+        $('#epicMenu .expandedSubMenu').css("display", 'none');
+    });
+
+    $("#newEpic").click(function() {
 
         $("#editableNote").lightbox_me({
             closeClick: false,
