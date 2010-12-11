@@ -26,7 +26,7 @@ ul {
 / / padding : .5 em;
 }
 
-ul li:nth-child(even) div {
+ul li:nth-child(even) .workItem {
     text-decoration: none;
     color: #000;
     display: block;
@@ -52,7 +52,7 @@ ul li:nth-child(even) div {
     background-color: #f9f9f2;
 }
 
-ul li:nth-child(odd) div {
+ul li:nth-child(odd) .workItem {
     text-decoration: none;
     color: #000; /*background: #fff182*/
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
@@ -72,7 +72,8 @@ ul li:nth-child(odd) div {
     -webkit-transform: rotate(-0.7deg);
 }
 
-ul li div span {
+/**Warp shadow**/
+ul li .workItem span {
     width: 100%;
     height: 15px;
     position: absolute;
@@ -80,16 +81,16 @@ ul li div span {
     right: 0px;
     box-shadow: 0px -10px 5px #fff;
     -moz-box-shadow: 0px -10px 5px #fff;
-    -webkit-box-shadow: 0px -10px 5px #fff;
+    -webkit-box-shadow: 0px -10px 5px #f9f9f2;
     border-radius: 50% / 7px;
     -moz-border-radius: 50% / 7px;
-    -webkit-border-radius: 400px 20px; /* webkit browsers apparently can't use a % for ellipse border radius */
+    -webkit-border-radius: 200px 20px; /* webkit browsers apparently can't use a % for ellipse border radius */
 }
 
 /**
    Tape class
 **/
-ul li div:after {
+ul li .workItem:after {
     display: block;
     content: "";
     position: absolute;
@@ -104,6 +105,17 @@ ul li div:after {
     box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
 }
 
+.menuLabel {
+    display: inline-block;
+    position: relative;
+    left: -34px;
+    top: 9px;
+    width:0px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+}
+
 ul li {
     margin: 1.5em;
 / / float : left;
@@ -113,6 +125,7 @@ ul li h2 {
     font-size: 100%;
     font-weight: bold;
     padding-bottom: 5px;
+    cursor: text;
 }
 
 ul li p {
@@ -123,9 +136,10 @@ ul li p {
 ul li div {
     position: relative;
     top: 5px;
+    cursor: move;
 }
 
-ul li div:hover, ul li div:focus {
+ul li .workItem:hover, ul li .workItem:focus {
     box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7); /*-webkit-transform: scale(1.05);*/
@@ -201,7 +215,7 @@ ol li div {
 }
 
 #header {
-    background-image: url("../../img/header.png");
+    background-image: url("../images/header.png");
     height: 78px;
     background-size: 99.99%;
     width: 1190px;
@@ -213,10 +227,13 @@ ol li div {
     color: white;
     margin-left: auto;
     margin-right: auto;
-    background-color: #6d4d2f;
     width: 100%;
+    height: 24px;
     display: block;
     font-family: Monaco;
+    background-image: url("../images/arraow.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .search {
@@ -241,11 +258,10 @@ ol li div {
 #menuBar {
     display: inline;
     position: relative;
-    top: 35px;
+    top: 30px;
     left: 300px;
 }
 
-}
 #projectsMenu {
     position: relative;
     display: inline;
@@ -292,8 +308,10 @@ ol li div {
 }
 
 .editableNote {
-    padding: 0.3em;
-    width: 60%;
+    padding: 0.2em;
+    width: 52%;
+    border-radius: 4px;
+    display: none;
     background-color: #fffdde; /*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));*/
 }
 
@@ -415,7 +433,22 @@ fieldset div.controls {
 }
 
 .formControls {
-    margin: 20px 0 0;
+    margin: 20px 10px 10px;
     padding: 0;
     float: right;
+}
+
+.storyCount {
+    background-color: #f03d25 !important;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    z-index: 101;
+    border: 1px solid #dd3822 !important;
+    border-top: 0 !important;
+    display: inline !important;
+    padding: 1px 1px 0 !important;
+    -webkit-border-radius: 4px !important;
+    top: -180px;
+    left: 220px;
 }
