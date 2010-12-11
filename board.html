@@ -15,8 +15,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
-    <script src="http://github.com/janl/mustache.js/raw/master/mustache.js"></script>
-    <script src="resources/js/jquery.lightbox_me.js"></script>
+    <script src="resources/js/lib/compiler.js"></script>
+    <script src="resources/js/lib/handlebars.js"></script>
+    <script src="resources/js/lib/jquery.lightbox_me.js"></script>
 
     <script src="resources/js/dashboard.js"></script>
 
@@ -44,22 +45,24 @@
 
                 <div id="themeMenu"
                      style="display:inline; padding: 18px 0 0 5px;margin: 0 0 0 5px;-webkit-border-radius: 5px;border: 1px inset #4a2c0e;">
-                    <img src="resources/images/Contacts-alt1.png" class="expandableSubMenu">
+                    <img src="resources/images/Notes-Stacked2.png" class="expandableSubMenu">
 
                     <div id="themeDetailMenu" class="expandedSubMenu displayClass">
                         <img id="newTheme" src="resources/images/plus_16.png" title="Add New Theme"
                              style="vertical-align:top;">
                     </div>
+                    <span>Theme</span>
                 </div>
 
                 <div id="storyMenu"
                      style="display:inline; padding: 18px 0 0 5px;margin: 0 0 0 5px;-webkit-border-radius: 5px;border: 1px inset #4a2c0e;">
-                    <img src="resources/images/Notes_32.png" class="expandableSubMenu">
+                    <img src="resources/images/Story.png" class="expandableSubMenu">
 
                     <div id="storyDetailMenu" class="expandedSubMenu displayClass">
                         <img id="newStory" src="resources/images/plus_16.png" title="Add New Story"
                              style="vertical-align:top;">
                     </div>
+                    <span>Story</span>
                 </div>
             </div>
             <!--<input type="button" value="Add New Story">-->
@@ -80,29 +83,21 @@
         <span class="phaseHeader">Phase1</span>
         <ul class="movable">
             <li>
-                <div class="shadow_box" id="card1">
+                <div class="workItem" id="card1">
 
                     <img src="resources/images/pencil_16.png" class="editNote">
 
-                    <h2 style="display:inline;">Editable Story</h2>
+                    <h2 style="display:inline;left:-25px;position:relative;">Editable Story</h2>
 
                     <p>The Story notes should be editable</p>
                     <span></span>
                 </div>
             </li>
             <li>
-                <div>
+                <div class="workItem">
                     <h2>Kanban dashboard</h2>
 
                     <p>As a ProjectAdmin I should be able to move any cards on my project</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #3</h2>
-
-                    <p>Text Content #3</p>
                     <span></span>
                 </div>
             </li>
@@ -113,28 +108,13 @@
         <span class="phaseHeader">Phase2</span>
         <ul class="movable">
             <li>
-                <div>
+                <div class="workItem">
                     <h2>Story #1</h2>
 
                     <p>Text Content #1</p>
                     <span></span>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #2</h2>
-
-                    <p>Text Content #2</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #3</h2>
-
-                    <p>Text Content #3</p>
-                    <span></span>
-                </div>
+                 <div class="storyCount">20</div>
             </li>
         </ul>
     </div>
@@ -143,58 +123,10 @@
         <span class="phaseHeader">Phase3</span>
         <ul class="movable">
             <li>
-                <div>
+                <div class="workItem">
                     <h2>Story #1</h2>
 
                     <p>Text Content #1</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #2</h2>
-
-                    <p>Text Content #2</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #3</h2>
-
-                    <p>Text Content #3</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #3</h2>
-
-                    <p>Text Content #3</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #3</h2>
-
-                    <p>Text Content #3</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #3</h2>
-
-                    <p>Text Content #3</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #3</h2>
-
-                    <p>Text Content #3</p>
                     <span></span>
                 </div>
             </li>
@@ -205,26 +137,10 @@
         <span class="phaseHeader">Phase4</span>
         <ul class="movable">
             <li>
-                <div>
+                <div class="workItem">
                     <h2>Story #1</h2>
 
                     <p>Text Content #1</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #2</h2>
-
-                    <p>Text Content #2</p>
-                    <span></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h2>Story #3</h2>
-
-                    <p>Text Content #3</p>
                     <span></span>
                 </div>
             </li>
@@ -257,6 +173,12 @@
 
                     <div>
                         <label for="storyDescription">Story Description</label>
+                        <textarea rows="2" cols="20">
+                        </textarea>
+                    </div>
+
+                    <div>
+                        <label for="storyDescription">Acceptance Test</label>
                         <textarea rows="2" cols="20">
                         </textarea>
                     </div>
@@ -295,7 +217,6 @@
             </div>
         </fieldset>
 
-
         <!-- Controls -->
         <div class="formControls">
             <button type="reset" class="sexybutton sexysimple sexyblack">Cancel</button>
@@ -304,8 +225,6 @@
         </div>
         </fieldset>
     </form>
-
-
 </div>
 </body>
 </html>
