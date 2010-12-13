@@ -297,6 +297,6 @@ $(function() {
     // the defaults will apply to any notification created within this
     // container, but can be overwritten on notification-by-notification
     // basis.
-    $container = $("#container").notify();
+    $container = $("#container").notify({ stack:'below' });
 
 });
