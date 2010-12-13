@@ -267,6 +267,10 @@ ol li div {
     display: inline;
 }
 
+#menuBar img {
+    cursor:pointer;
+}
+
 #portfolioView {
     position: relative;
     display: inline;
@@ -470,11 +474,12 @@ fieldset div.controls {
     font-size: 12px;
     line-height: 16px;
     font-family: HelveticaNeue-Medium, Helvetica, sans-serif;
+        cursor:pointer !important;
 }
 
 .comments {
-    background: url('../images/comments.png') 0 0 no-repeat;
-    padding-left: 20px;
+    background: url("../images/comment_user_20.png") 0 -2px no-repeat;
+    padding-left: 22px;
     margin-right: 10px;
 }
 

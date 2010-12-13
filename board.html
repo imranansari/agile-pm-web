@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="resources/css/flex-box.css">
 
     <link rel="stylesheet" href="temp/demo.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="resources/css/ui.notify.css" type="text/css" media="all"/>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
     <script src="resources/js/lib/handlebars.js"></script>
     <script src="resources/js/lib/jquery.lightbox_me.js"></script>
+    <script src="resources/js/lib/jquery.notify.js"></script>
 
     <script src="resources/js/dashboard.js"></script>
 
@@ -117,75 +119,30 @@
 
 <!--Epic Story Board Template-->
 <div id="epicStoryBoardContainer" style="display:none;">
-    <div id="1" class="phasepanel">
+    <div id="story_{{phase1}}" class="phasepanel">
         <span class="phaseHeader">{{phase1}}</span>
         <ul class="movable">
-            <li>
-                <div class="workItem" id="card1">
 
-                    <img src="resources/images/pencil_16.png" class="editNote">
-
-                    <h2 style="display:inline;left:-25px;position:relative;">Editable Story</h2>
-
-                    <p>The Story notes should be editable</p>
-                    <span></span>
-                </div>
-                <div class="storyCount">10</div>
-            </li>
-            <li>
-                <div class="workItem">
-                    <h2>Kanban dashboard</h2>
-
-                    <p>As a ProjectAdmin I should be able to move any cards on my project</p>
-                    <span></span>
-                </div>
-                <div class="storyCount">3</div>
-            </li>
         </ul>
     </div>
 
-    <div id="2" class="phasepanel">
+    <div id="story_{{phase2}}" class="phasepanel">
         <span class="phaseHeader">{{phase2}}</span>
         <ul class="movable">
-            <li>
-                <div class="workItem">
-                    <h2>Epic #1</h2>
 
-                    <p>Description</p>
-                    <span></span>
-                </div>
-                <div class="storyCount">20</div>
-            </li>
         </ul>
     </div>
 
-    <div id="3" class="phasepanel">
+    <div id="story_{{phase3}}" class="phasepanel">
         <span class="phaseHeader">{{phase3}}</span>
         <ul class="movable">
-            <li>
-                <div class="workItem">
-                    <h2>Epic #2</h2>
 
-                    <p>Description</p>
-                    <span></span>
-                </div>
-                <div class="storyCount">10</div>
-            </li>
         </ul>
     </div>
 
-    <div id="4" class="phasepanel">
+    <div id="story_{{phase4}}" class="phasepanel">
         <span class="phaseHeader">{{phase4}}</span>
         <ul class="movable">
-            <li>
-                <div class="workItem">
-                    <h2>Story #1</h2>
-
-                    <p>Text Content #1</p>
-                    <span></span>
-                </div>
-                <div class="storyCount">2</div>
-            </li>
         </ul>
     </div>
 </div>
@@ -443,6 +400,78 @@
     </li>
 </div>
 
+<!--Story Template-->
+<div id="epicStoryTemplate" style="display:none;">
+    <li>
+        <div class="workItem" id="card1">
+
+            <img src="resources/images/pencil_16.png" class="editNote">
+
+            <h2 style="display:inline;left:-25px;position:relative;">{{storyName}}</h2>
+
+            <p>{{storyDesc}}</p>
+
+            <div class="workItemFooter">
+                <div class="assigned">{{assigned}}</div>
+                <div class="comments">Comments</div>
+                <div><input type="checkbox"/>Done</div>
+            </div>
+            <span></span>
+        </div>
+        <div class="storyCount">{{storyCount}}</div>
+    </li>
+</div>
+
 <div id="lightBoxContent" class="editableNote"></div>
+
+<!--- container to hold notifications, and default templates --->
+<div id="container" style="display:none">
+
+    <div id="default">
+        <h1>#{title}</h1>
+
+        <p class="growlMessage">#{text}</p>
+    </div>
+
+    <div id="sticky">
+        <a class="ui-notify-close ui-notify-cross" href="#">x</a>
+
+        <h1>#{title}</h1>
+
+        <p class="growlMessage">#{text}</p>
+    </div>
+
+    <div id="themeroller" class="ui-state-error"
+         style="padding:10px; -moz-box-shadow:0 0 6px #980000; -webkit-box-shadow:0 0 6px #980000; box-shadow:0 0 6px #980000;">
+        <a class="ui-notify-close" href="#"><span class="ui-icon ui-icon-close" style="float:right"></span></a>
+        <span style="float:left; margin:0 5px 0 0;" class="ui-icon ui-icon-alert"></span>
+
+        <h1>#{title}</h1>
+
+        <p>#{text}</p>
+
+        <p style="text-align:center"><a class="ui-notify-close" href="#">Close Me</a></p>
+    </div>
+
+    <div id="withIcon">
+        <a class="ui-notify-close ui-notify-cross" href="#">x</a>
+
+        <div style="float:left;margin:0 10px 0 0"><img src="#{icon}" alt="warning"/></div>
+        <h1>#{title}</h1>
+
+        <p>#{text}</p>
+    </div>
+
+    <div id="buttons">
+        <h1>#{title}</h1>
+
+        <p>#{text}</p>
+
+        <p style="margin-top:10px;text-align:center">
+            <input type="button" class="confirm" value="Close Dialog"/>
+        </p>
+    </div>
+</div>
+
 </body>
 </html>

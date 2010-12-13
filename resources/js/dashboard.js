@@ -1,3 +1,7 @@
+function create(template, vars, opts) {
+    return setTimeout(function(){$container.notify("create", template, vars, opts)},5000);
+}
+
 function displayStoryBoard() {
     var data = {
         phase1: 'Definition',
@@ -24,6 +28,35 @@ function addStoryToBoard(data) {
     $('#' + phaseName + ' ul').append(html);
 }
 
+function displayEpicStoryBoard() {
+    var data = {
+        phase1: 'Definition',
+        phase2: 'Development',
+        phase3: 'QA',
+        phase4: 'Delivered'
+
+    }
+
+    var source = $('#epicStoryBoardContainer').html();
+    var template = Handlebars.compile(source);
+
+    var html = template(data)
+    $('#mainContainer').html(html);
+
+    create("default", { title:'Story Moved', text:'Movable Story moved from Dev to QA by Homer'});
+    create("sticky", { title:'Story % Complete Updated', text:'Editable story 80% Complete'}, { expires:false });
+}
+
+function addEpicStoryToBoard(data) {
+
+    var source = $('#epicStoryTemplate').html();
+    var template = Handlebars.compile(source);
+
+    var html = template(data);
+    var phaseName = "story_" + data.phase;
+    $('#' + phaseName + ' ul').append(html);
+}
+
 function addStoriesToBoard() {
     var stories = { story : [
         {
@@ -36,7 +69,7 @@ function addStoriesToBoard() {
             phase: 'QA',
             storyName: 'Movable Story',
             storyDesc: 'The Story should be moveable between phases',
-            assigned: 'Homer'
+            assigned: 'null'
         },
         {
             phase: 'Definition',
@@ -51,9 +84,9 @@ function addStoriesToBoard() {
             assigned: 'Homer'
         },
         {
-            phase: 'Definition',
-            storyName: 'Editable Story',
-            storyDesc: 'The Story notes should be editable',
+            phase: 'Development',
+            storyName: 'Add New Story',
+            storyDesc: 'Ability to create a new Story card',
             assigned: 'Homer'
         },
         {
@@ -66,6 +99,44 @@ function addStoriesToBoard() {
 
     jQuery.each(stories.story, function() {
         addStoryToBoard(this);
+    });
+}
+
+function addEpicStoriesToBoard() {
+    var stories = { story : [
+        {
+            phase: 'Definition',
+            storyName: 'Editable Story',
+            storyDesc: 'The Story notes should be editable',
+            assigned: 'Homer',
+            storyCount: 10
+        },
+
+        {
+            phase: 'Definition',
+            storyName: 'Movable Story',
+            storyDesc: 'The Story should be moveable between phases',
+            assigned: 'Homer',
+            storyCount: 2
+        },
+        {
+            phase: 'Development',
+            storyName: 'Add New Story',
+            storyDesc: 'Ability to create a new Story card',
+            assigned: 'Homer',
+            storyCount: 26
+        },
+        {
+            phase: 'Delivered',
+            storyName: 'Assignable Story',
+            storyDesc: 'The Story should be assignable',
+            assigned: 'Bart',
+            storyCount: 8
+        }
+    ]}
+
+    jQuery.each(stories.story, function() {
+        addEpicStoryToBoard(this);
     });
 }
 
@@ -147,19 +218,8 @@ $(function() {
         $('#epicMenu .expandedSubMenu').css("display", 'inline');
         $('#storyMenu .expandedSubMenu').css("display", 'none');
 
-        var data = {
-            phase1: 'Definition',
-            phase2: 'Development',
-            phase3: 'QA',
-            phase4: 'Delivered'
-
-        }
-
-        var source = $('#epicStoryBoardContainer').html();
-        var template = Handlebars.compile(source);
-
-        var html = template(data)
-        $('#mainContainer').html(html);
+        displayEpicStoryBoard();
+        addEpicStoriesToBoard();
 
         $(function() {
             $(".movable").sortable({
@@ -229,5 +289,14 @@ $(function() {
             overlayDisappearSpeed: 100
         });
     });
+
+});
+
+$(function() {
+    // initialize widget on a container, passing in all the defaults.
+    // the defaults will apply to any notification created within this
+    // container, but can be overwritten on notification-by-notification
+    // basis.
+    $container = $("#container").notify();
 
 });
