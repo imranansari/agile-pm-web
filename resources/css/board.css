@@ -44,6 +44,65 @@ ul li:nth-child(even) .workItem {
     -o-transition: -o-transform .15s linear;
     -webkit-transition: -webkit-transform .15s linear;
     -webkit-transform: rotate(0.7deg);
+    z-index: 50;
+}
+
+ul li .epicStory {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    height: 145px;
+    width: 210px;
+    padding: 15px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
+    z-index: 7;
+    position: relative;
+}
+
+.epicStack1 {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    height: 145px;
+    width: 210px;
+    padding: 15px;
+/ / -moz-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, 1 );
+/ / -webkit-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
+/ / box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
+    -moz-box-shadow: 0px 10px 5px #ccc;
+    /*-webkit-box-shadow: 0px 10px 5px #ccc;*//*background: #fff182*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
+    /*background-color : #CFC;*/
+    box-shadow: 0px 10px 5px #ccc;
+    -moz-transition: -moz-transform .15s linear;
+    -o-transition: -o-transform .15s linear;
+    -webkit-transform: rotate(2.9deg);
+    z-index: 6;
+    top: -170px;
+    position: relative;
+}
+
+.epicStack2 {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    height: 145px;
+    width: 210px;
+    padding: 15px;
+/ / -moz-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, 1 );
+/ / -webkit-box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
+/ / box-shadow : 5 px 5 px 7 px rgba ( 33, 33, 33, .7 );
+    -moz-box-shadow: 0px 10px 5px #ccc;
+    /*-webkit-box-shadow: 0px 10px 5px #ccc;*/ /*background: #fff182*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(240, 242, 155, 1)), to(rgba(247, 247, 210, 1)));
+    /*background-color : #CCF;*/
+    /*box-shadow: 0px 10px 5px #ccc;*/
+    -moz-transition: -moz-transform .15s linear;
+    -o-transition: -o-transform .15s linear;
+    -webkit-transform: rotate(-2.9deg);
+    z-index: 4;
+    position: relative;
+    top: -340px;
 }
 
 #mainContainer {
@@ -70,6 +129,7 @@ ul li:nth-child(odd) .workItem {
     -o-transition: -o-transform .15s linear;
     -webkit-transition: -webkit-transform .15s linear;
     -webkit-transform: rotate(-0.7deg);
+    z-index: 50;
 }
 
 /**Warp shadow**/
@@ -90,7 +150,7 @@ ul li .workItem span {
 /**
    Tape class
 **/
-ul li .workItem:after {
+/*ul li .workItem:after {
     display: block;
     content: "";
     position: absolute;
@@ -103,7 +163,7 @@ ul li .workItem:after {
     -webkit-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
-}
+}*/
 
 .menuLabel {
     display: inline-block;
@@ -129,8 +189,8 @@ ul li h2 {
 }
 
 ul li p {
-    font-family: "Reenie Beanie", arial, sans-serif;
-    font-size: 150%;
+    font-family: 'Arial';
+    font-size: 90%;
 }
 
 ul li div {
@@ -216,10 +276,16 @@ ol li div {
 
 #header {
     background-image: url("../images/header.png");
+    /*background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.66, rgb(26,13,3)),
+    color-stop(0.41, rgb(45,33,22))
+);*/
     height: 78px;
     background-size: 99.99%;
-    width: 1190px;
-    background-repeat: no-repeat;
+    width: 1190px; /*background-repeat: no-repeat;*/
 }
 
 .phaseHeader {
@@ -268,7 +334,7 @@ ol li div {
 }
 
 #menuBar img {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #portfolioView {
@@ -453,19 +519,20 @@ fieldset div.controls {
     color: #fff;
     font-size: 10px;
     font-weight: bold;
-    z-index: 101;
+    z-index: 10;
     border: 1px solid #dd3822 !important;
     border-top: 0 !important;
     display: inline !important;
     padding: 1px 1px 0 !important;
     -webkit-border-radius: 4px !important;
-    top: -180px;
+    top: 5px;
     left: -5px;
+    position: absolute;
 }
 
 .workItemFooter {
-    position: relative;
-    top: 68px;
+    position: absolute;
+    top: 152px;
 }
 
 .workItemFooter div {
@@ -474,7 +541,7 @@ fieldset div.controls {
     font-size: 12px;
     line-height: 16px;
     font-family: HelveticaNeue-Medium, Helvetica, sans-serif;
-        cursor:pointer !important;
+    cursor: pointer !important;
 }
 
 .comments {
