@@ -59,6 +59,11 @@ ul li .epicStory {
     position: relative;
 }
 
+.epicStory:hover {
+    -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7); /*-webkit-transform: scale(1.05);*/
+    position: relative;
+}
+
 .epicStack1 {
     text-decoration: none;
     color: #000;
@@ -182,14 +187,15 @@ ul li {
 }
 
 ul li h2 {
-    font-size: 100%;
+    font-size: 95%;
     font-weight: bold;
     padding-bottom: 5px;
     cursor: text;
+    font-family: 'Ubuntu';
 }
 
 ul li p {
-    font-family: 'Arial';
+    font-family: 'Ubuntu';
     font-size: 90%;
 }
 
@@ -317,15 +323,19 @@ ol li div {
     color: white;
     top: 10px;
     right: -20px;
-    font-family: 'Lobster', arial, serif;
-    font-size: 40px;
+    font-family: 'Ubuntu', arial, serif;
+    font-weight:bold;
+    font-style:normal;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: -3px 3px 5px rgba(0,0,0,0.8);
 }
 
 #menuBar {
     display: inline;
     position: relative;
     top: 29px;
-    left: 300px;
+    left: 220px;
 }
 
 #projectsMenu {
@@ -515,6 +525,7 @@ fieldset div.controls {
 }
 
 .storyCount {
+    /*background-color: #f03d25 !important;*/
     background-color: #f03d25 !important;
     color: #fff;
     font-size: 10px;
@@ -528,6 +539,9 @@ fieldset div.controls {
     top: 5px;
     left: -5px;
     position: absolute;
+    width:15px;
+    text-align:center;
+    -webkit-transform: rotate(-45deg);
 }
 
 .workItemFooter {
