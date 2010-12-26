@@ -1,5 +1,7 @@
 function create(template, vars, opts) {
-    return setTimeout(function(){$container.notify("create", template, vars, opts)},5000);
+    return setTimeout(function() {
+        $container.notify("create", template, vars, opts)
+    }, 5000);
 }
 
 function displayStoryBoard() {
@@ -43,9 +45,14 @@ function displayEpicStoryBoard() {
     var html = template(data)
     $('#mainContainer').html(html);
 
-    create("default", { title:'Story Moved', text:'Movable Story moved from Dev to QA by Homer'});
-    create("sticky", { title:'Story % Complete Updated', text:'Editable story 80% Complete'}, { expires:false });
+    //create("default", { title:'Story Moved', text:'Movable Story moved from Dev to QA by Homer'});
+    create("default", { title:'Story % Complete Updated', text:'Editable story 80% Complete'});
+    create("withIcon", { title:'Story Moved', text:'Movable Story moved from Dev to QA by Homer.', icon:'resources/images/Alert.png' }, {
+        expires:false
+    });
+
 }
+
 
 function addEpicStoryToBoard(data) {
 
@@ -192,10 +199,10 @@ $(function() {
 
         $("#lightBoxContent").lightbox_me({
             closeClick: false,
-            overlaySpeed:100,
+            overlaySpeed:50,
             closeSelector:".closeNote",
             appearEffect:'fadeIn',
-            overlayDisappearSpeed: 100
+            overlayDisappearSpeed: 0
         });
     });
 
@@ -261,10 +268,10 @@ $(function() {
 
         $("#lightBoxContent").lightbox_me({
             closeClick: false,
-            overlaySpeed:100,
+            overlaySpeed:50,
             closeSelector:".closeNote",
             appearEffect:'fadeIn',
-            overlayDisappearSpeed: 100
+            overlayDisappearSpeed: 0
         });
 
     });
@@ -283,10 +290,10 @@ $(function() {
 
         $("#lightBoxContent").lightbox_me({
             closeClick: false,
-            overlaySpeed:100,
+            overlaySpeed:50,
             closeSelector:".closeNote",
             appearEffect:'fadeIn',
-            overlayDisappearSpeed: 100
+            overlayDisappearSpeed: 0
         });
     });
 
