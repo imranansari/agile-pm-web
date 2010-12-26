@@ -5,6 +5,7 @@
     <title>Live Iterations</title>
     <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bolditalic' rel='stylesheet' type='text/css'>
 
     <link href="resources/css/board.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="resources/css/sexybuttons.css" type="text/css"/>
@@ -51,7 +52,7 @@
 
                     <div id="epicDetailMenu" class="expandedSubMenu displayClass">
                         <img id="newEpic" src="resources/images/plus_16.png" title="Add New Epic"
-                             style="vertical-align:top;">
+                             style="vertical-align:top;left:-1px;position:relative;">
                     </div>
                     <span class="menuLabel">Epic</span>
                 </div>
@@ -62,7 +63,7 @@
 
                     <div id="storyDetailMenu" class="expandedSubMenu displayClass">
                         <img id="newStory" src="resources/images/plus_16.png" title="Add New Story"
-                             style="vertical-align:top;">
+                             style="vertical-align:top;left:-1px;position:relative;">
                     </div>
                     <span class="menuLabel">Story</span>
                 </div>
@@ -88,7 +89,7 @@
 <!--Story Board Template-->
 <div id="storyBoardContainer" style="display:none;">
     <div id="story_{{phase1}}" class="phasepanel">
-        <span class="phaseHeader">{{phase1}}</span>
+        <span class="phaseHeader">{{phase1}} <span>{{storyCount}}</span></span>
         <ul class="movable">
 
         </ul>
@@ -393,7 +394,7 @@
             <div class="workItemFooter">
                 <div class="assigned">{{assigned}}</div>
                 <div class="comments">Comments</div>
-                <div><input type="checkbox"/>Done</div>
+                <div><input type="checkbox" style="margin-right:2px;display:inline;">Done</div>
             </div>
             <span></span>
         </div>
@@ -403,29 +404,33 @@
 <!--Story Template-->
 <div id="epicStoryTemplate" style="display:none;">
     <li>
-        <div class="workItem" id="card1">
+        <div style="height:205px" class="epicStoryContainer">
 
-            <img src="resources/images/pencil_16.png" class="editNote">
+            <div class="epicStory">
+                <img src="resources/images/pencil_16.png" class="editNote">
 
-            <h2 style="display:inline;left:-25px;position:relative;">{{storyName}}</h2>
+                <h2 style="display:inline;left:-25px;position:relative;">{{storyName}}</h2>
 
-            <p>{{storyDesc}}</p>
+                <p>{{storyDesc}}</p>
 
-            <div class="workItemFooter">
-                <div class="assigned">{{assigned}}</div>
-                <div class="comments">Comments</div>
-                <div><input type="checkbox"/>Done</div>
+                <div class="workItemFooter">
+                    <div class="assigned">{{assigned}}</div>
+                    <div class="comments">Comments</div>
+                    <div><input type="checkbox" style="margin-right:2px;display:inline;"/>Done</div>
+                </div>
             </div>
-            <span></span>
+
+            <div class="storyCount">{{storyCount}}</div>
+            <div class="epicStack1"></div>
+            <div class="epicStack2"></div>
         </div>
-        <div class="storyCount">{{storyCount}}</div>
     </li>
 </div>
 
 <div id="lightBoxContent" class="editableNote"></div>
 
 <!--- container to hold notifications, and default templates --->
-<div id="container" style="display:none; top:auto; bottom:0; margin:0 0 10px 10px">
+<div id="container" style="display:none; top:auto; bottom:0; margin:0 0 10px 10px; z-index:100;">
 
     <div id="default">
         <h1>#{title}</h1>
@@ -459,7 +464,7 @@
         <div style="float:left;margin:0 10px 0 0"><img src="#{icon}" alt="warning"/></div>
         <h1>#{title}</h1>
 
-        <p>#{text}</p>
+        <p class="growlMessage">#{text}</p>
     </div>
 
     <div id="buttons">
