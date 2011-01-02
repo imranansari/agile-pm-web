@@ -1,0 +1,44 @@
+#newStoryDlg{:style => "display:none;"}
+  .editableNoteHeader
+    %span.closeNote
+      %img{:src => "images/close_16.png"}/
+    New Story
+  %form{:action => "#", :method => "get"}
+    %fieldset
+      .flex-container
+        .col-1.col-1-flex
+          %div
+            %label{:for => "storyName"} Story Name
+            %input#storyName{:name => "storyName", :type => "text", :value => "{{storyName}}"}/
+          %div
+            %label{:for => "storyType"} Story Type
+            %select#storyType
+              %option test
+          %div
+            %label{:for => "storyDescription"} Story Description
+            %textarea{:cols => "20", :rows => "2"} {{storyDesc}}
+          %div
+            %label{:for => "storyDescription"} Acceptance Test
+            %textarea{:cols => "20", :rows => "2"} {{acceptanceTest}}
+        .col-2.col-2-flex
+          %div
+            %label{:for => "dueDate"} Due Date
+            %input#dueDate{:type => "date"}/
+          %div
+            %label{:for => "assignedTo"} Assigned To
+            %select#assignedTo
+              %option test
+          %div
+            %label{:for => "estimate"} Estimate
+            %input#estimate{:name => "estimate", :type => "text"}/
+          %div
+            %label{:for => "pct_complete"} % Complete
+            %input#pct_complete{:name => "pct_complete", :type => "text"}/
+          %div
+            %label{:for => "storyTags"} Tags
+            %input#storyTags{:name => "tags", :type => "password"}/
+    / Controls
+    .formControls
+      %button.sexybutton.sexysimple.sexyblack{:type => "reset"} Cancel
+      %button.sexybutton.sexysimple.sexyyellow{:type => "reset"} Save Story to Back Log
+      %button.sexybutton.sexysimple.sexygreen{:type => "reset"} Save Story & Add to Queue

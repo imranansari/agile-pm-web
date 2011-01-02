@@ -1,0 +1,27 @@
+#container{:style => "display:none; top:auto; bottom:0; margin:0 0 10px 10px; z-index:100;"}
+  #default
+    %h1 \#{title}
+    %p.growlMessage \#{text}
+  #sticky
+    %a.ui-notify-close.ui-notify-cross{:href => "#"} x
+    %h1 \#{title}
+    %p.growlMessage \#{text}
+  #themeroller.ui-state-error{:style => "padding:10px; -moz-box-shadow:0 0 6px #980000; -webkit-box-shadow:0 0 6px #980000; box-shadow:0 0 6px #980000;"}
+    %a.ui-notify-close{:href => "#"}
+      %span.ui-icon.ui-icon-close{:style => "float:right"}
+    %span.ui-icon.ui-icon-alert{:style => "float:left; margin:0 5px 0 0;"}
+    %h1 \#{title}
+    %p \#{text}
+    %p{:style => "text-align:center"}
+      %a.ui-notify-close{:href => "#"} Close Me
+  #withIcon
+    %a.ui-notify-close.ui-notify-cross{:href => "#"} x
+    %div{:style => "float:left;margin:0 10px 0 0"}
+      %img{:alt => "warning", :src => "\#{icon}"}/
+    %h1 \#{title}
+    %p.growlMessage \#{text}
+  #buttons
+    %h1 \#{title}
+    %p \#{text}
+    %p{:style => "margin-top:10px;text-align:center"}
+      %input.confirm{:type => "button", :value => "Close Dialog"}/
