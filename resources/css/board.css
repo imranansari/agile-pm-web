@@ -57,6 +57,7 @@ ul li .epicStory {
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(247, 247, 210, 1)), to(rgba(240, 242, 155, 1)));
     z-index: 7;
     position: relative;
+        border: 1px solid #D8D8D8;
 }
 
 .epicStory:hover {
@@ -85,6 +86,7 @@ ul li .epicStory {
     z-index: 6;
     top: -170px;
     position: relative;
+    border: 1px solid #D8D8D8;
 }
 
 .epicStack2 {
@@ -107,7 +109,8 @@ ul li .epicStory {
     -webkit-transform: rotate(-2.9deg);
     z-index: 4;
     position: relative;
-    top: -340px;
+    top: -348px;
+        border: 1px solid #D8D8D8;
 }
 
 #mainContainer {
@@ -526,7 +529,7 @@ fieldset div.controls {
 
 .storyCount {
     /*background-color: #f03d25 !important;*/
-    background-color: #f03d25 !important;
+    background-color: #e37f00 !important;
     color: #fff;
     font-size: 10px;
     font-weight: bold;
@@ -536,7 +539,7 @@ fieldset div.controls {
     display: inline !important;
     padding: 1px 1px 0 !important;
     -webkit-border-radius: 4px !important;
-    top: 5px;
+    top: 2px;
     left: -5px;
     position: absolute;
     width:15px;
