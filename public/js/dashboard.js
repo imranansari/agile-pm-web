@@ -48,7 +48,7 @@ function displayEpicStoryBoard() {
 
     //create("default", { title:'Story Moved', text:'Movable Story moved from Dev to QA by Homer'});
     create("default", { title:'Story % Complete Updated', text:'Editable story 80% Complete'});
-    create("withIcon", { title:'Story Moved', text:'Movable Story moved from Dev to QA by Homer.', icon:'resources/images/Alert.png' }, {
+    create("withIcon", { title:'Story Moved', text:'Movable Story moved from Dev to QA by Homer.', icon:'images/Alert.png' }, {
         expires:false
     });
 
@@ -182,32 +182,10 @@ $(function() {
      $("#noteOverLay").data('overlay').load();
      });*/
 
-    $('.editNote').live('click', function() {
+    $('.editEpicNote').live('click', function() {
         var refId = $(this).attr('refId');
         console.log(refId);
-        var epicModel = epicModels.get(refId).toJSON();
-
-        var data = {
-            storyName: "Kanban Dashboard",
-            storyDesc : "As a ProjectAdmin I should be able to move any cards on my project",
-            calc: function() {
-                return 2 + 4;
-            }
-        }
-
-        var source = $('#editableStoryDlg').html();
-        var template = Handlebars.compile(source);
-
-        var html = template(epicModel)
-        $('#lightBoxContent').html(html);
-
-        $("#lightBoxContent").lightbox_me({
-            closeClick: false,
-            overlaySpeed:50,
-            closeSelector:".closeNote",
-            appearEffect:'fadeIn',
-            overlayDisappearSpeed: 0
-        });
+        new EpicController().editEpic(epicModels.get(refId));
     });
 
     $(".expandableMenu").click(function(e) {
@@ -225,11 +203,12 @@ $(function() {
      //alert($("#expandableMenu").attr("id"))
      });*/
 
-    $('#epicMenu').click(function() {
+    $('#epicMenu:first').click(function() {
         $('#epicMenu .expandedSubMenu').css("display", 'inline');
         $('#storyMenu .expandedSubMenu').css("display", 'none');
+    });
 
-
+    $('#displayEpics').click(function() {
         displayEpicStoryBoard();
         new EpicController().displayEpics();
         //addEpicStoriesToBoard();
@@ -239,7 +218,6 @@ $(function() {
                 connectWith: ".movable"
             });
             $(".movable").disableSelection();
-
         });
     });
 
@@ -247,9 +225,9 @@ $(function() {
         $('#storyMenu .expandedSubMenu').css("display", 'inline');
         $('#epicMenu .expandedSubMenu').css("display", 'none');
 
+
         displayStoryBoard();
         addStoriesToBoard();
-
         $(function() {
             $(".movable").sortable({
                 connectWith: ".movable"
@@ -262,23 +240,7 @@ $(function() {
 
     $("#newEpic").click(function() {
 
-        var data = {
-            test: 'test1'
-        }
-
-        var source = $('#newEpicDlg').html();
-        var template = Handlebars.compile(source);
-
-        var html = template(data)
-        $('#lightBoxContent').html(html);
-
-        $("#lightBoxContent").lightbox_me({
-            closeClick: false,
-            overlaySpeed:50,
-            closeSelector:".closeNote",
-            appearEffect:'fadeIn',
-            overlayDisappearSpeed: 0
-        });
+        new EpicController().newEpic();
 
     });
 
