@@ -61,7 +61,10 @@ $(document).ready(function() {
         },
 
         displayEpics: function() {
-            epicModels = new EpicModels(initData);
+            if (typeof epicModels == "undefined") {
+                epicModels = new EpicModels(initData);
+            }
+
             // Create view instances for every model
             epicViews = epicModels.map(function(epicModel) {
                 var view = new EpicView({model: epicModel});
@@ -71,6 +74,42 @@ $(document).ready(function() {
                 //$('#epic_p1').append();
                 return view;
             });
+        },
+
+        editEpic: function(editEpicModel) {
+            console.log(editEpicModel.toJSON().phase);
+            var epicEditView = new EpicEditView({model: editEpicModel});
+
+            $('#lightBoxContent').html(epicEditView.render().el);
+
+            $("#lightBoxContent").lightbox_me({
+                closeClick: false,
+                overlaySpeed:50,
+                closeSelector:".closeNote",
+                appearEffect:'fadeIn',
+                overlayDisappearSpeed: 0
+            });
+        },
+
+        newEpic: function() {
+            var newEpicView = new NewEpicView();
+
+            $('#lightBoxContent').html(newEpicView.render().el);
+
+            $("#lightBoxContent").lightbox_me({
+                closeClick: false,
+                overlaySpeed:50,
+                closeSelector:".closeNote",
+                appearEffect:'fadeIn',
+                overlayDisappearSpeed: 0
+            });
+        },
+
+        addEpicToBoard: function(epicModel) {
+            var view = new EpicView({model: epicModel});
+
+            var phaseName = "story_QA";
+            $('#' + phaseName + ' ul').append(view.render().el);
         }
 
     });
