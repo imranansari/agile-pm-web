@@ -3,23 +3,23 @@
     %span.closeNote
       %img{:src => "images/close_16.png"}/
     New Epic Story
-  %form{:action => "#", :method => "get"}
+  %form{:id => "newEpicStoryForm_{{id}}",:action => "#", :method => "get"}
     %fieldset
       .flex-container
         .col-1.col-1-flex
           %div
             %label{:for => "epicStoryName"} Epic Story Name
-            %input#epicStoryName{:name => "epicStoryName", :type => "text", :value => "{{epicStoryName}}"}/
+            %input#storyName{:name => "storyName", :type => "text"}/
           %div
             %label{:for => "storyType"} Story Type
             %select#storyType
               %option test
           %div
             %label{:for => "storyDescription"} Epic Story Description
-            %textarea{:cols => "20", :rows => "2"} {{storyDesc}}
+            %textarea#storyDesc{:name => "storyDesc", :cols => "20", :rows => "2"}
           %div
             %label{:for => "storyDescription"} Acceptance Test
-            %textarea{:cols => "20", :rows => "2"} {{acceptanceTest}}
+            %textarea{:cols => "20", :rows => "2"}
         .col-2.col-2-flex
           %div
             %label{:for => "dueDate"} Due Date

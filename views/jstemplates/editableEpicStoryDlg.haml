@@ -3,7 +3,7 @@
     %span.closeNote
       %img{:src => "images/close_16.png"}/
     {{storyName}}
-  %form{:action => "#", :method => "get"}
+  %form{:action => "#", :method => "get", :id=>"editableEpicStoryForm_{{id}}"}
     %fieldset
       .flex-container
         .col-1.col-1-flex
@@ -12,14 +12,15 @@
             %input#storyName{:name => "storyName", :type => "text", :value => "{{storyName}}"}/
           %div
             %label{:for => "storyType"} Story Type
-            %select#storyType
-              %option test
+            %select#storyType{:name => "storyType"}
+              %option test3
+              %option test4
           %div
             %label{:for => "storyDescription"} Story Description
-            %textarea{:cols => "20", :rows => "2"} {{storyDesc}}
+            %textarea#storyDesc{:name => "storyDesc" ,:cols => "20", :rows => "2"} {{storyDesc}}
           %div
             %label{:for => "storyDescription"} Acceptance Test
-            %textarea{:cols => "20", :rows => "2"} {{acceptanceTest}}
+            %textarea#acceptanceTest{:name => "acceptanceTest",:cols => "20", :rows => "2"} {{acceptanceTest}}
         .col-2.col-2-flex
           %div
             %label{:for => "dueDate"} Due Date
@@ -27,7 +28,8 @@
           %div
             %label{:for => "assignedTo"} Assigned To
             %select#assignedTo
-              %option test
+              %option test1
+              %option test2
           %div
             %label{:for => "estimate"} Estimate
             %input#estimate{:name => "estimate", :type => "text"}/
