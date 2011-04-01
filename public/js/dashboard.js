@@ -215,7 +215,14 @@ $(function() {
 
         $(function() {
             $(".movable").sortable({
-                connectWith: ".movable"
+                connectWith: ".movable",
+                receive: function(event, ui) {
+                    console.log('updated : '+ ui.item[0].id);
+                    //console.log('serial : '+ $(this).find('li').attr('id'));
+                    //console.log($(this).find('li').parent().serialize());
+                    console.log($(this).sortable("serialize"));
+                    //console.log($(this).serialize());
+                }
             });
             $(".movable").disableSelection();
         });
