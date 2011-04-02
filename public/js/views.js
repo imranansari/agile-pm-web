@@ -1,6 +1,7 @@
 $(document).ready(function() {
 // Views represent what should be visible
     EpicView = Backbone.View.extend({
+        tagName: "li",
         initialize: function() {
             _.bindAll(this, "render");
         },
@@ -12,7 +13,7 @@ $(document).ready(function() {
             $(this.el).html(template(this.model.toJSON()));
 
             /*$(this.el).html(_.template('<li><%= storyName %> </li>',
-             this.model.toJSON()));*/
+            this.model.toJSON()));*/
 
             // Returning this.el instead could also be a good idea..
             return this;
@@ -86,6 +87,7 @@ $(document).ready(function() {
 
 
             var epicModel = epicModels.create(formData);
+            epicModel.set({storyCount:0});
             console.log(epicModel.toJSON());
             //epicModel.save();
             //epicModel.fetch();
