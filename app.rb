@@ -15,11 +15,13 @@ end
 
 put '/epic/:id' do
 #message = JSON.parse(params[:model])
+  print 'put'
   epic = JSON.parse(request.body.read)
   print epic
 end
 
 post '/epic' do
+  print 'post'
 #message = JSON.parse(params[:model])
   epic = JSON.parse(request.body.read)
   print epic
