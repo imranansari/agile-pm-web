@@ -210,7 +210,8 @@ $(function() {
 
     $('#displayEpics').click(function() {
         displayEpicStoryBoard();
-        new EpicController().displayEpics();
+        var epicController = new EpicController();
+        epicController.displayEpics();
         //addEpicStoriesToBoard();
 
         $(function() {
@@ -221,6 +222,7 @@ $(function() {
                     //console.log('serial : '+ $(this).find('li').attr('id'));
                     //console.log($(this).find('li').parent().serialize());
                     console.log($(this).sortable("serialize"));
+                    epicController.updateEpicLocation($(this).sortable('toArray'), ui.item[0]);
                     //console.log($(this).serialize());
                 }
             });
