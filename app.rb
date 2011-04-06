@@ -21,7 +21,16 @@ put '/epic/:id' do
 #message = JSON.parse(params[:model])
   print 'put'
   epic = JSON.parse(request.body.read)
-  print epic
+  print epic.to_json
+  print epic["id"]
+  updateEpic = Epic.where(:_id => epic["id"]).first
+
+  updateEpic.phase = epic["phase"];
+  updateEpic.storyName = epic["storyName"];
+  updateEpic.storyDesc = epic["storyDesc"];
+  updateEpic.assigned = epic["assigned"];
+
+  updateEpic.save;
 end
 
 post '/epic' do
@@ -41,6 +50,10 @@ get '/epic' do
   content_type 'application/json'
   response['Expires'] = (Time.now).httpdate
   epics = Epic.all()
-  puts epics.to_json
+  #updatedEpics = epics.map!{ |epic| epic.id = epic._id }
+  #epics.each{|ep| puts ep.id}
+
+  #epics.each{|epic| epic.id = epic._id}
+
   epics.to_json
 end
