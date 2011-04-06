@@ -3,8 +3,10 @@ require 'sinatra'
 require 'Haml'
 require 'sass'
 require 'json'
-require 'active_record'
-require './configure_db'
+#require 'active_record'
+require 'mongoid'
+require './configure_mongo'
+require './epic'
 
 get '/app' do
   haml :index
@@ -27,15 +29,18 @@ post '/epic' do
 #message = JSON.parse(params[:model])
   epic = JSON.parse(request.body.read)
   print epic
-  Epic.create(epic);
+  #Person.new(:first_name => "Ludwig", :last_name => "Beethoven")
+  newEpic = Epic.new(epic);
+  newEpic.phase = "QA";
+  newEpic.storyCount = "0";
+  newEpic.save;
 end
 
 get '/epic' do
   print 'list epics'
   content_type 'application/json'
   response['Expires'] = (Time.now).httpdate
-  epics = Epic.find(:all)
-  ActiveRecord::Base.include_root_in_json = false
+  epics = Epic.all()
   puts epics.to_json
   epics.to_json
 end
