@@ -3,7 +3,7 @@ $(document).ready(function() {
     EpicModel = Backbone.Model.extend({});
 
 // Collections represent a list of models (typically a query on a server)
-    EpicModels = Backbone.Collection.extend({url:'http://localhost:9393/epic',
+    EpicModels = Backbone.Collection.extend({url:'http://localhost:4567/epic',
         model:EpicModel});
 
 

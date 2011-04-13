@@ -50,7 +50,6 @@ $(document).ready(function() {
         }
     ];
     EpicController = Backbone.Controller.extend({
-
         routes: {
             "newstory":                 "newStory",
             "display_epics":        "displayEpics"
@@ -62,13 +61,13 @@ $(document).ready(function() {
 
         displayEpics: function() {
             if (typeof epicModels == "undefined") {
-                //getEpicModels();
+                var initData = epicController.getEpicModelsFromService();
                 epicModels = new EpicModels(initData);
             }
 
             // Create view instances for every model
             epicViews = epicModels.map(function(epicModel) {
-                var view = new EpicView({id: 'epic_'+epicModel.id, model: epicModel});
+                var view = new EpicView({id: 'epic_' + epicModel.id, model: epicModel});
 
                 var phaseName = "story_" + epicModel.toJSON().phase;
                 //console.log(view.render().el);
@@ -78,7 +77,30 @@ $(document).ready(function() {
             });
         },
 
-        
+        getEpicModelsFromService: function() {
+            var data;
+            $.ajax({
+                url: '/epic',
+                type: 'GET',
+                dataType : 'json',
+                async: false,
+                success: function(dataFromService) {
+                    data = dataFromService;
+                }});
+
+            var updatedData = epicController.massageDataForMongoDb(data);
+            return updatedData;
+        },
+
+        massageDataForMongoDb: function(data) {
+            var updatedData = new Array();
+            $(data).each(function() {
+                var updatedEpic = this;
+                updatedEpic.id = this._id;
+                updatedData.push(updatedEpic);
+            });
+            return updatedData;
+        },
 
         editEpic: function(editEpicModel) {
             console.log(editEpicModel.toJSON().phase);
@@ -117,16 +139,16 @@ $(document).ready(function() {
             //epicModel.save();
         },
 
-        updateEpicLocation: function(epicsInPhase, updatedEpic){
+        updateEpicLocation: function(epicsInPhase, updatedEpic) {
             var phaseId = $(updatedEpic).closest(".phasepanel").attr('id');
             console.log(phaseId);
-            $(epicsInPhase).each(function(){
-               console.log(this);
+            $(epicsInPhase).each(function() {
+                console.log(this);
             });
         }
 
     });
 
-    new EpicController();
+    var epicController = new EpicController();
     Backbone.history.start();
 });

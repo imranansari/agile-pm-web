@@ -22,7 +22,8 @@ $(document).ready(function() {
 
     EpicEditView = Backbone.View.extend({
         events: {
-            "submit form" : "onSubmit"
+            "submit form" : "onSubmit",
+            "click #deleteEpicStory":  "destroy"
         },
         initialize: function() {
             _.bindAll(this, 'contentChanged');
@@ -40,6 +41,13 @@ $(document).ready(function() {
             // Returning this.el instead could also be a good idea..
             return this;
         },
+
+        destroy: function(){
+           console.log(this.model.toJSON().storyName);
+           console.log(this.model.toJSON().id);
+            this.model.destroy();
+        },
+
         onSubmit: function(e) {
             console.log('changed form');
 
