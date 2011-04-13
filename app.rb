@@ -126,6 +126,17 @@ get '/getaddr' do
   address.to_json
 end
 
+get '/getaddrfix' do
+  id = "4da1e44dfd86062397000002"
+  person = Person.where("addresses._id" => "4da1e44dfd86062397000002").first
+  address = person.addresses.find("4da1e44dfd86062397000002")
+  address.city = address.city + " 1 "
+  address.save
+
+  content_type 'application/json'
+  address.to_json
+end
+
 get '/getperson' do
   id = "4da1e44dfd86062397000001"
   person = Person.find(id)
@@ -149,8 +160,11 @@ get '/getperson' do
 end
 
 get '/posupdate'do
-  db = Mongo::Connection.new.db("demo")
+  #db = Mongo::Connection.new.db("demo")
+  #db = Mongoid.database.connection
+  db = Mongoid.database
   coll = db.collection("people")
+  print "ready to update"
   #coll.update({"name" => "Imran"},{"$set" => {"name" => "Jim"}})
   #coll.update({"addresses.city" => "Bonn"},{"$set" => {"addresses.$.city" => "Durham"}})
   coll.update({"addresses._id" => BSON.ObjectId("4da1e44dfd86062397000002")},{"$set" => {"addresses.$.city" => "Raleigh"}})
