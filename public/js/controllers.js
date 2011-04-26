@@ -9,38 +9,6 @@ $(document).ready(function() {
             storyCount: 10
         },
         {
-            id: '2',
-            phase: 'QA',
-            storyName: 'Movable Story',
-            storyDesc: 'The Story should be moveable between phases',
-            assigned: 'Marge',
-            storyCount: 5
-        },
-        {
-            id: '3',
-            phase: 'Definition',
-            storyName: 'Commentable Stories',
-            storyDesc: 'The Story notes should be commentable',
-            assigned: 'Lisa',
-            storyCount: 20
-        },
-        {
-            id: '4',
-            phase: 'QA',
-            storyName: 'Movable Story 2',
-            storyDesc: 'The Story should be moveable between phases',
-            assigned: 'Homer',
-            storyCount: 2
-        },
-        {
-            id: '5',
-            phase: 'Development',
-            storyName: 'Add New Story',
-            storyDesc: 'Ability to create a new Story card',
-            assigned: 'Homer',
-            storyCount: 5
-        },
-        {
             id: '6',
             phase: 'Delivered',
             storyName: 'Assignable Story',
@@ -51,8 +19,8 @@ $(document).ready(function() {
     ];
     EpicController = Backbone.Controller.extend({
         routes: {
-            "newstory":                 "newStory",
-            "display_epics":        "displayEpics"
+            "newstory": "newStory",
+            "display_epics": "displayEpics"
         },
 
         newStory: function() {
