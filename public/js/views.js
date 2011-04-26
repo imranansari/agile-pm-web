@@ -13,7 +13,7 @@ $(document).ready(function() {
             $(this.el).html(template(this.model.toJSON()));
 
             /*$(this.el).html(_.template('<li><%= storyName %> </li>',
-            this.model.toJSON()));*/
+             this.model.toJSON()));*/
 
             // Returning this.el instead could also be a good idea..
             return this;
@@ -23,7 +23,8 @@ $(document).ready(function() {
     EpicEditView = Backbone.View.extend({
         events: {
             "submit form" : "onSubmit",
-            "click #deleteEpicStory":  "destroy"
+            "click #deleteEpicStory":  "destroy",
+            "click #saveEpicStory":  "update"
         },
         initialize: function() {
             _.bindAll(this, 'contentChanged');
@@ -42,16 +43,16 @@ $(document).ready(function() {
             return this;
         },
 
-        destroy: function(){
-           console.log(this.model.toJSON().storyName);
-           console.log(this.model.toJSON().id);
+        destroy: function() {
+            console.log(this.model.toJSON().storyName);
+            console.log(this.model.toJSON().id);
             this.model.destroy();
         },
 
-        onSubmit: function(e) {
+        update: function() {
             console.log('changed form');
 
-            var form = '#editableEpicStoryForm_'+this.model.toJSON().id;
+            var form = '#editableEpicStoryForm_' + this.model.toJSON().id;
             //alert(form);
             var formData = $(form).serializeObject();
             console.log(formData);
@@ -61,7 +62,6 @@ $(document).ready(function() {
             this.model.set(formData);
             console.log(this.model.toJSON());
             this.model.save();
-            return false;
         }
     });
 
@@ -99,7 +99,7 @@ $(document).ready(function() {
             console.log(epicModel.toJSON());
             //epicModel.save();
             //epicModel.fetch();
-            try{
+            try {
                 new EpicController().addEpicToBoard(epicModel);
             } catch(err) {
                 console.log(err);
@@ -108,7 +108,7 @@ $(document).ready(function() {
             return false;
         }
     });
-    
+
 });
 
 // Create view instances for every model
