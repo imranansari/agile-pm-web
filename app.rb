@@ -47,6 +47,16 @@ post '/epic' do
   newEpic.save;
 end
 
+delete '/epic/:id' do |id|
+print 'delete'
+  #epic = JSON.parse(request.body.read)
+  #print epic.to_json
+  print id
+  deleteEpic = Epic.where(:_id => id).first
+
+  deleteEpic.destroy;
+end
+
 get '/epic' do
   print 'list epics'
   content_type 'application/json'

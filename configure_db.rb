@@ -26,8 +26,8 @@ configure do
   end
 
   puts 'db recs created'
-  Epic.create(:phase => 'Definition', :storyName => 'LincPad', :storyDesc => 'LFG Ipad App',:assigned => 'Homer', :storyCount => '2');
-  Epic.create(:phase => 'Development', :storyName => 'Epic Dashboard', :storyDesc => 'Epic Dashboard should be live updating',:assigned => 'Marge', :storyCount => '10');
-  Epic.create(:phase => 'QA', :storyName => 'Story Dashboard', :storyDesc => 'Story dashboard should handle multiple useres',:assigned => 'Bart', :storyCount => '8');
+  #Epic.create(:phase => 'Definition', :storyName => 'LincPad', :storyDesc => 'LFG Ipad App',:assigned => 'Homer', :storyCount => '2');
+  #Epic.create(:phase => 'Development', :storyName => 'Epic Dashboard', :storyDesc => 'Epic Dashboard should be live updating',:assigned => 'Marge', :storyCount => '10');
+  #Epic.create(:phase => 'QA', :storyName => 'Story Dashboard', :storyDesc => 'Story dashboard should handle multiple useres',:assigned => 'Bart', :storyCount => '8');
 
 end

@@ -1,4 +1,5 @@
 configure do
+=begin
   Mongoid.configure do |config|
     name = "demo"
     host = "localhost"
@@ -8,4 +9,7 @@ configure do
     ]
     config.persist_in_safe_mode = false
   end
+=end
+  connection = Mongo::Connection.new
+  Mongoid.database = connection.db("demo")
 end
