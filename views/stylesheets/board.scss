@@ -217,7 +217,12 @@ ol {
   border: 1px #540223 solid;
   width: 295px;
   border-style: dotted;
-  height: 100%; }
+  height: 100%;
+    ul {
+        height:100%;
+    }
+
+  }
 
 /* Overlays */
 
