@@ -27,22 +27,50 @@ $(document).ready(function() {
             alert('new story');
         },
 
+        /*        displayEpics: function() {
+         if (typeof epicModels == "undefined") {
+         var initData = epicController.getEpicModelsFromService();
+         epicModels = new EpicModels(initData);
+         }
+
+         // Create view instances for every model
+         epicViews = epicModels.map(function(epicModel) {
+         var view = new EpicView({id: 'epic_' + epicModel.id, model: epicModel});
+
+         var phaseName = "story_" + epicModel.toJSON().phase;
+         //console.log(view.render().el);
+         $('#' + phaseName + ' ul').append(view.render().el);
+         return view;
+         });
+         }*/
+
+        saveEpic: function(formData) {
+            epicModels.create(formData);
+        },
+
         displayEpics: function() {
-            if (typeof epicModels == "undefined") {
-                var initData = epicController.getEpicModelsFromService();
-                epicModels = new EpicModels(initData);
+            if (typeof epicModels == "undefined" || epicModels.length == 0) {
+                //var initData = epicController.getEpicModelsFromService();
+                //epicModels = new EpicModels();
+                //phase1Collection.refresh(initData);
+                //phase1Collection.fetch();
+                //phase1Collection.create({name : 'numi wumi'});
             }
 
-            // Create view instances for every model
-            epicViews = epicModels.map(function(epicModel) {
-                var view = new EpicView({id: 'epic_' + epicModel.id, model: epicModel});
+            var initData = epicController.getEpicModelsFromService();
+            epicModels = new EpicModels;
+            epicModels.refresh(initData);
 
-                var phaseName = "story_" + epicModel.toJSON().phase;
-                //console.log(view.render().el);
-                $('#' + phaseName + ' ul').append(view.render().el);
-                //$('#epic_p1').append();
-                return view;
+            var dashBoardCollectionView = new UpdatingDashboardCollectionView({
+                collection : epicModels,
+                childViewConstructor : UpdatingEpicView,
+                childViewTagName : "li",
+                el : $('#story_Definition ul')[0]
             });
+            dashBoardCollectionView.render();
+
+            //phase1Collection.create({storyName : 'numi wumi 123.1'});
+            //$("#story_QA ul").append('<li>Message Center</li>');
         },
 
         getEpicModelsFromService: function() {

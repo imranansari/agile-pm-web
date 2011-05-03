@@ -1,7 +1,8 @@
 $(document).ready(function() {
 // Views represent what should be visible
+    displayEpicStoryBoard();
+
     EpicView = Backbone.View.extend({
-        tagName: "li",
         initialize: function() {
             _.bindAll(this, "render");
         },
@@ -10,6 +11,8 @@ $(document).ready(function() {
             // inserted in the DOM or not
             var source = $('#epicStoryTemplate').html();
             var template = Handlebars.compile(source);
+            console.log(this.model.toJSON());
+            console.log(template(this.model.toJSON()));
             $(this.el).html(template(this.model.toJSON()));
 
             /*$(this.el).html(_.template('<li><%= storyName %> </li>',
@@ -20,7 +23,16 @@ $(document).ready(function() {
         }
     });
 
-    EpicEditView = Backbone.View.extend({
+    UpdatingEpicView = EpicView.extend({
+        initialize : function(options) {
+            this.render = _.bind(this.render, this);
+            this.model.bind('change:storyName', this.render);
+            this.model.bind('change:storyDesc', this.render);
+            console.log(this.model);
+        }
+    });
+
+    EpicEditView = UpdatingEpicView.extend({
         events: {
             "submit form" : "onSubmit",
             "click #deleteEpicStory":  "destroy",
@@ -93,14 +105,15 @@ $(document).ready(function() {
             var formData = $(form).serializeObject();
             console.log(formData);
 
+            new EpicController().saveEpic(formData);
 
-            var epicModel = epicModels.create(formData);
-            epicModel.set({storyCount:0});
-            console.log(epicModel.toJSON());
+            //var epicModel = epicModels.create(formData);
+            //epicModel.set({storyCount:0});
+            //console.log(epicModel.toJSON());
             //epicModel.save();
             //epicModel.fetch();
             try {
-                new EpicController().addEpicToBoard(epicModel);
+                //new EpicController().addEpicToBoard(epicModel);
             } catch(err) {
                 console.log(err);
             }
@@ -109,8 +122,23 @@ $(document).ready(function() {
         }
     });
 
+
+    /*var epicController = new EpicController();
+     var initData = epicController.getEpicModelsFromService();
+     phase1Collection = new EpicModels;
+     phase1Collection.refresh(initData);
+
+     var phaseOneView = new UpdatingCollectionView({
+     collection : phase1Collection,
+     childViewConstructor : UpdatingDonutView,
+     childViewTagName : "li",
+     el : $('#story_Definition ul')[0]
+     });
+     phaseOneView.render();*/
+
 });
 
+//$('#story_Definition ul')[0]
 // Create view instances for every model
 /*views = models.map(function(model) {
  var view = new EpicView({model: model});

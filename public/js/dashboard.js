@@ -185,7 +185,11 @@ $(function() {
     $('.editEpicNote').live('click', function() {
         var refId = $(this).attr('refId');
         console.log(refId);
-        new EpicController().editEpic(epicModels.get(refId));
+        var epicModel = epicModels.get(refId);
+        //var epicModel = epicModels.models[0];
+        //epicModel.set({storyName:'1.1.1.6'});
+        //epicModel.save();
+        new EpicController().editEpic(epicModel);
     });
 
     $(".expandableMenu").click(function(e) {
@@ -209,25 +213,25 @@ $(function() {
     });
 
     $('#displayEpics').click(function() {
-        displayEpicStoryBoard();
+        //displayEpicStoryBoard();
         var epicController = new EpicController();
         epicController.displayEpics();
         //addEpicStoriesToBoard();
 
-        $(function() {
-            $(".movable").sortable({
-                connectWith: ".movable",
-                receive: function(event, ui) {
-                    console.log('updated : '+ ui.item[0].id);
-                    //console.log('serial : '+ $(this).find('li').attr('id'));
-                    //console.log($(this).find('li').parent().serialize());
-                    console.log($(this).sortable("serialize"));
-                    epicController.updateEpicLocation($(this).sortable('toArray'), ui.item[0]);
-                    //console.log($(this).serialize());
-                }
-            });
-            $(".movable").disableSelection();
-        });
+        /*        $(function() {
+         $(".movable").sortable({
+         connectWith: ".movable",
+         receive: function(event, ui) {
+         console.log('updated : '+ ui.item[0].id);
+         //console.log('serial : '+ $(this).find('li').attr('id'));
+         //console.log($(this).find('li').parent().serialize());
+         console.log($(this).sortable("serialize"));
+         epicController.updateEpicLocation($(this).sortable('toArray'), ui.item[0]);
+         //console.log($(this).serialize());
+         }
+         });
+         $(".movable").disableSelection();
+         });*/
     });
 
     $('#storyMenu').click(function() {
@@ -249,6 +253,9 @@ $(function() {
 
     $("#newEpic").click(function() {
 
+        //phase1Collection.create({storyName : 'numi wumi 123.2', phase: 'QA'});
+        //phase1Collection.create({storyName : 'numi wumi 123.3', phase: 'Development'});
+        console.log('New epic created');
         new EpicController().newEpic();
 
     });
