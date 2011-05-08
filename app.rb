@@ -24,8 +24,8 @@ put '/epic/:id' do
   print 'put'
   epic = JSON.parse(request.body.read)
   print epic.to_json
-  print epic["id"]
-  updateEpic = Epic.where(:_id => epic["id"]).first
+  print epic["_id"]
+  updateEpic = Epic.where(:_id => epic["_id"]).first
 
   updateEpic.phase = epic["phase"];
   updateEpic.storyName = epic["storyName"];
@@ -39,12 +39,21 @@ post '/epic' do
   print 'post'
 #message = JSON.parse(params[:model])
   epic = JSON.parse(request.body.read)
-  print epic
+  #print epic
   #Person.new(:first_name => "Ludwig", :last_name => "Beethoven")
+=begin
   newEpic = Epic.new(epic);
   newEpic.phase = "QA";
   newEpic.storyCount = "0";
   newEpic.save;
+  newEpic.id = newEpic._id;
+=end
+  newEpic = Epic.create(epic);
+  #print 'new id :'+newEpic._id;
+  #newEpic.id = newEpic._id;
+  #newEpic.fname = "my fname";
+  #newEpic.fname = newEpic._id;
+  newEpic.to_json
 end
 
 delete '/epic/:id' do |id|
