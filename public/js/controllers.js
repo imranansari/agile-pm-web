@@ -45,7 +45,23 @@ $(document).ready(function() {
          }*/
 
         saveEpic: function(formData) {
-            epicModels.create(formData);
+            var newEpic = epicModels.create(formData);
+            console.log(newEpic)
+            //newEpic.refresh();
+            var updatedModel = epicModels.getByCid(newEpic.cid);
+            console.log(updatedModel);
+            //updatedMpdel.refresh();
+            //console.log(updatedMpdel);
+            //console.log(newEpic);
+            /*         var newEpic = new EpicModel();
+             newEpic.save(formData, {
+             success: function(saved_epic, data) {
+             console.log(saved_epic);
+             }});*/
+
+
+            //var updatedEpic = newEpic.save();
+            //console.log(updatedEpic.toJSON());
         },
 
         displayEpics: function() {
@@ -84,8 +100,8 @@ $(document).ready(function() {
                     data = dataFromService;
                 }});
 
-            var updatedData = epicController.massageDataForMongoDb(data);
-            return updatedData;
+            //var updatedData = epicController.massageDataForMongoDb(data);
+            return data;
         },
 
         massageDataForMongoDb: function(data) {
@@ -137,7 +153,11 @@ $(document).ready(function() {
 
         updateEpicLocation: function(epicsInPhase, updatedEpic) {
             var phaseId = $(updatedEpic).closest(".phasepanel").attr('id');
+            var phase = phaseId.substring(phaseId.indexOf("_")+1);
             console.log(phaseId);
+            var modelId = $(updatedEpic).find('.editEpicNote').attr('refid');
+            epicModels.get(modelId).set({phase:phase}).save();
+
             $(epicsInPhase).each(function() {
                 console.log(this);
             });

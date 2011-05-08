@@ -14,6 +14,7 @@ $(document).ready(function() {
             console.log(this.model.toJSON());
             console.log(template(this.model.toJSON()));
             $(this.el).html(template(this.model.toJSON()));
+            //$(this.el).html(this.model.toJSON().storyName);
 
             /*$(this.el).html(_.template('<li><%= storyName %> </li>',
              this.model.toJSON()));*/
@@ -57,23 +58,25 @@ $(document).ready(function() {
 
         destroy: function() {
             console.log(this.model.toJSON().storyName);
-            console.log(this.model.toJSON().id);
+            console.log(this.model.toJSON()._id);
             this.model.destroy();
         },
 
         update: function() {
             console.log('changed form');
 
-            var form = '#editableEpicStoryForm_' + this.model.toJSON().id;
+            var form = '#editableEpicStoryForm_' + this.model.toJSON()._id;
             //alert(form);
             var formData = $(form).serializeObject();
             console.log(formData);
 
             // if you send request to server is prob. good idea to set the var and save at the end, in a blur event or in some sync. maintenance timer.
             //this.model.set(tempVModel);
-            this.model.set(formData);
+            //this.model.set(formData);
             console.log(this.model.toJSON());
-            this.model.save();
+            console.log(this.model.id);
+            epicModels.get(this.model.id).set(formData).save();
+            //this.model.save();
         }
     });
 

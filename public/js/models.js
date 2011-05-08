@@ -1,6 +1,7 @@
 $(document).ready(function() {
 // Models represent your data
     EpicModel = Backbone.Model.extend({
+        idAttribute: "_id",
         defaults : {
             storyName : "This is the story",
             phase : "Definition",
