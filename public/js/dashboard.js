@@ -11,7 +11,7 @@ function displayEpicStoryBoard() {
         phase2: 'Development',
         phase3: 'QA',
         phase4: 'Delivered'
-    }
+    };
 
     var source = $('#epicStoryBoardContainer').html();
     var template = Handlebars.compile(source);
@@ -27,23 +27,6 @@ function displayEpicStoryBoard() {
 }
 
 $(function() {
-
-    $(function() {
-
-        $(".movable").sortable({
-            connectWith: ".movable"
-        });
-        $(".movable").disableSelection();
-
-    });
-
-
-    $('.editEpicNote').live('click', function() {
-        var refId = $(this).attr('refId');
-        console.log(refId);
-        var epicModel = epicModels.get(refId);
-        new EpicController().editEpic(epicModel);
-    });
 
     $(".expandableMenu").click(function(e) {
         $(this).closest("div").children('.expandedMenu').toggleClass('displayClass');
@@ -78,10 +61,8 @@ $(function() {
     $("#newEpic").click(function() {
         new EpicController().newEpic();
     });
-
 });
 
 $(function() {
     $container = $("#container").notify({ stack:'below' });
-
 });
